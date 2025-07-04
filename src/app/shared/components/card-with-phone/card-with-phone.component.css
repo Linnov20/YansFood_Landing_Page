@@ -1,0 +1,15 @@
+.contain-with-bg{
+  background-image: url('../../assets/phone-bg.svg');
+  border: 1px solid brown;
+  width: 45rem;
+  height: 45rem;
+
+
+}
+.image-container{
+  background-image: url('../../assets/Announce-Page.svg');
+  border: 1px solid brown;
+
+
+
+}

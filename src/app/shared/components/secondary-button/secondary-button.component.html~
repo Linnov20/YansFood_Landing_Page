@@ -1,0 +1,6 @@
+<button
+  class="bg-linear-to-b from-gray-800 to-gray-950 text-white font-medium text-lg p-4 rounded shadow-lg
+         hover:font-bold hover:cursor-pointer hover:bg-linear-to-r hover:ease-in-out hover:duration-75"
+>
+  {{ name }}
+</button>

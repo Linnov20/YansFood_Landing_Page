@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+@import "tailwindcss";
+
+
+
+*{
+  font-family: Raleway, sans-serif;
+}
+
+@theme{
+
+  /*colors*/
+  --color-active : '#F14237';
+
+  /*fonts*/
+  --font-raleway: 'Raleway', sans-serif;
+
+  /*breakpoints*/
+  --breakpoint-xs: 20rem;
+  --breakpoint-3xl: 100rem;
+  --breakpoint-4xl: 120rem;
+
+
+}
