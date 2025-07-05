@@ -2,22 +2,40 @@
   class="flex flex-col gap-2 h-screen "
 >
   <header
-    class="border border-amber-400 h-1/4"
+    class="border border-amber-400 h-1/4 pl-12 pr-12 flex items-center"
   >
     <nav
-      class="border flex gap-2"
+      class="border flex items-center justify-between w-full"
     >
-<!--      <img src="/logo.svg" alt="yansFood-logo" class="w-24 h-24 border">-->
+      <div
+        class="flex items-center gap-12 xl:gap-14"
+      >
+        <img ngSrc="/logo.svg" alt="yansFood-logo" height="96" width="96">
 
+        <div
+          class="flex gap-4"
+        >
+          @for (button of navbarButtons; track $index) {
+            <app-primary-button [name]="button" [buttonId]="$index"/>
+          }
+        </div>
+      </div>
 
+      <app-secondary-button name="Télécharger"/>
     </nav>
+
+    <div
+      class="absolute top-28 right-1 transform overflow-hidden
+             xl:-right-2 xl:top-32 "
+    >
+      <img ngSrc="/Star.svg" alt="star-image" height="58" width="62">
+    </div>
   </header>
 
   <main
     class="border border-red-500 h-2/4"
   >
-    <app-card-with-phone
-    ></app-card-with-phone>
+
 
   </main>
 

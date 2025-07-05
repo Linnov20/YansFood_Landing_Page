@@ -6,9 +6,9 @@ import { Injectable, signal } from '@angular/core';
 })
 export class SelectedButtonService {
 
-  selectedButtonId = signal<string | null>('');
+  selectedButtonId = signal<number | null>(null);
 
-  selectButton(buttonId: string) {
+  selectButton(buttonId: number) {
     console.log('Selecting button:', buttonId)
     this.selectedButtonId.set(buttonId);
   }

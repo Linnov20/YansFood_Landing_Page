@@ -12,7 +12,7 @@ import {SelectedButtonService} from '../../../services/selected-button.service';
 })
 export class PrimaryButtonComponent {
   @Input() name : string = 'Présentation';
-  @Input() buttonId : string = '';
+  @Input() buttonId !: number;
 
   currentColor: string = '#F14237';
 
@@ -26,14 +26,18 @@ export class PrimaryButtonComponent {
 
 
   onButtonClick() {
-    this.selectedButtonService.deselectAll();
-    this.selectedButtonService.selectedButtonId.set(this.buttonId);
+    const isCurrentlySelected = this.isSelected();
 
-    if (this.isSelected()) {
-      this.currentColor = '#F14237';
-    } else {
-      this.selectedButtonService.selectButton(this.buttonId);
+    if (isCurrentlySelected) {
+
+      this.selectedButtonService.deselectAll();
       this.currentColor = '#000000';
+    } else {
+
+      this.selectedButtonService.deselectAll();
+      this.selectedButtonService.selectedButtonId.set(this.buttonId);
+      this.selectedButtonService.selectButton(this.buttonId);
+      this.currentColor = '#F14237';
     }
   }
 }
