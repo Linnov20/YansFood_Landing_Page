@@ -6,6 +6,7 @@ import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-ic
 import {NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
+import {Cross, List, LucideAngularModule} from 'lucide-angular';
 
 
 @Component({
@@ -13,7 +14,8 @@ import {SecondaryButtonComponent} from '../../shared/components/secondary-button
   imports: [
     NgOptimizedImage,
     PrimaryButtonComponent,
-    SecondaryButtonComponent
+    SecondaryButtonComponent,
+    LucideAngularModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -24,5 +26,13 @@ export class HomeComponent {
     'Présentation',
     'Partenaire',
     'Guide'
-  ]
+  ];
+  protected readonly  menu = List;
+  protected readonly close = Cross
+  menuDisplay = false
+
+  toggleMenu(){
+    this.menuDisplay = !this.menuDisplay
+
+  }
 }

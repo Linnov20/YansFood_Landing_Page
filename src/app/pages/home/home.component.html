@@ -1,19 +1,25 @@
 <div
-  class="flex flex-col gap-2 h-screen "
+  class="flex flex-col gap-2 h-screen"
 >
+  <div
+    class="sm:hidden xs:block bg-amber-100 absolute h-full border w-full z-0"
+    [style.display]="menuDisplay? 'flex' : 'none' "
+  >
+  </div>
   <header
-    class="border border-amber-400 h-1/4 pl-12 pr-12 flex items-center"
+    class="border border-amber-400 flex items-center
+           lg:pl-12 lg:pr-12 lg:h-1/4 xs:h-28 xs:pr-6 xs:pl-6"
   >
     <nav
-      class="border flex items-center justify-between w-full"
+      class="xs:hidden border sm:flex items-center justify-between w-full"
     >
       <div
-        class="flex items-center gap-12 xl:gap-14"
+        class="flex items-center sm:gap-8 lg:gap-12 gap-14"
       >
         <img ngSrc="/logo.svg" alt="yansFood-logo" height="96" width="96">
 
         <div
-          class="flex gap-4"
+          class="flex lg:gap-4 sm:gap-3"
         >
           @for (button of navbarButtons; track $index) {
             <app-primary-button [name]="button" [buttonId]="$index"/>
@@ -25,10 +31,48 @@
     </nav>
 
     <div
-      class="absolute top-28 right-1 transform overflow-hidden
-             xl:-right-2 xl:top-32 "
+      class="border border-black absolute lg:top-28 lg:right-1 transform
+             -right-2 top-32"
     >
       <img ngSrc="/Star.svg" alt="star-image" height="58" width="62">
+    </div>
+
+    <div
+      class="sm:hidden xs:flex justify-between w-full items-center"
+    >
+      <img ngSrc="/logo.svg" alt="yansFood-logo" height="56" width="56">
+      <nav
+      >
+        <lucide-angular
+          [img]="menu"
+          class="hover:cursor-pointer"
+          (click)="toggleMenu()"
+        ></lucide-angular>
+        <div
+          class="bg-red-300 absolute h-full flex-col gap-8 w-44 right-0 top-0 z-10 items-center
+                 sm:hidden xs:flex"
+          [style.display]= "menuDisplay? 'flex' : 'none'"
+        >
+          <div
+            class="w-full flex justify-end h-14 items-end p-3 hover:cursor-pointer"
+          >
+            <lucide-angular
+              [img]="close"
+              (click)="toggleMenu()"
+            ></lucide-angular>
+          </div>
+
+          <div
+            class="flex flex-col gap-4"
+          >
+            @for (button of navbarButtons; track $index) {
+              <app-primary-button [name]="button" [buttonId]="$index"/>
+            }
+            <app-secondary-button name="Télécharger"/>
+          </div>
+
+        </div>
+      </nav>
     </div>
   </header>
 
