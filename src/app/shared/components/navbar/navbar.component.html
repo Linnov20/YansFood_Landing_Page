@@ -1,0 +1,19 @@
+<nav
+  class="hidden border md:flex items-center justify-between w-full"
+>
+  <div
+    class="flex items-center sm:gap-8 lg:gap-12 gap-14"
+  >
+    <img ngSrc="/logo.svg" alt="yansFood-logo" height="96" width="96">
+
+    <div
+      class="flex lg:gap-4 sm:gap-3"
+    >
+      @for (button of navbarButtons; track $index) {
+        <app-primary-button [name]="button" [buttonId]="$index"/>
+      }
+    </div>
+  </div>
+
+  <app-secondary-button name="Télécharger"/>
+</nav>

@@ -1,3 +1,37 @@
-<div>
+<nav
+  class="md:hidden flex justify-between w-full items-center"
+>
+  <img ngSrc="/logo.svg" alt="yansFood-logo" height="56" width="56">
+  <div
+  >
+    <lucide-angular
+      [img]="menu"
+      class="hover:cursor-pointer"
+      (click)="toggleMenu()"
+    ></lucide-angular>
+    <div
+      class="bg-red-300 absolute h-full flex-col gap-8 w-44 right-0 top-0 z-10 items-center
+                 sm:hidden xs:flex"
+      [style.display]= "menuDisplay? 'flex' : 'none'"
+    >
+      <div
+        class="w-full flex justify-end h-14 items-end p-3 hover:cursor-pointer"
+      >
+        <lucide-angular
+          [img]="close"
+          (click)="toggleMenu()"
+        ></lucide-angular>
+      </div>
 
-</div>
+      <div
+        class="flex flex-col gap-4"
+      >
+        @for (button of navbarButtons; track $index) {
+          <app-primary-button [name]="button" [buttonId]="$index"/>
+        }
+        <app-secondary-button name="Télécharger"/>
+      </div>
+
+    </div>
+  </div>
+</nav>

@@ -1,6 +1,7 @@
 <button
   class="font-medium font-raleway
-  hover:font-bold hover:cursor-pointer hover:ease-linear hover:duration-100"
+         lg:font-base xs:text-xs sm:text-sm
+         hover:font-bold hover:cursor-pointer hover:ease-linear hover:duration-100"
 
   (click)="onButtonClick()"
   [ngStyle]="{'color': isSelected() ? currentColor : '', 'font-weight': isSelected() ? 700 : ''}"

@@ -1,21 +1,21 @@
 import { Component, Input } from '@angular/core';
-
-import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-icon/title-lg-with-icon.component';
-import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/card-with-phone.component';
-import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-icon/title-xl-with-icon.component';
 import {NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
-import {Cross, List, LucideAngularModule} from 'lucide-angular';
+import {CirclePlay, Cross, List, LucideAngularModule} from 'lucide-angular';
+import {NavbarComponent} from '../../shared/components/navbar/navbar.component';
+import {MenuBurgerComponent} from '../../shared/components/menu-burger/menu-burger.component';
 
 
 @Component({
   selector: 'app-home',
   imports: [
     NgOptimizedImage,
-    PrimaryButtonComponent,
+    LucideAngularModule,
+    NavbarComponent,
+    MenuBurgerComponent,
     SecondaryButtonComponent,
-    LucideAngularModule
+    PrimaryButtonComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -27,11 +27,11 @@ export class HomeComponent {
     'Partenaire',
     'Guide'
   ];
-  protected readonly  menu = List;
-  protected readonly close = Cross
+  protected readonly  playIcon = CirclePlay;
+
   menuDisplay = false
 
-  toggleMenu(){
+  toggleMenu = () =>{
     this.menuDisplay = !this.menuDisplay
 
   }

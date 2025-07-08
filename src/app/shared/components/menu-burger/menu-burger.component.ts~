@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {LucideAngularModule, Menu, X} from 'lucide-angular';
+import {Cross, List, LucideAngularModule, Menu} from 'lucide-angular';
 import {NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../secondary-button/secondary-button.component';
@@ -20,6 +20,6 @@ export class MenuBurgerComponent {
   @Input() navbarButtons: string[] = [];
   @Input() menuDisplay !: boolean
 
-  protected readonly close = X;
+  protected readonly close = Cross;
   protected readonly menu = Menu;
 }
