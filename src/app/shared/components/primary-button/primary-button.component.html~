@@ -1,9 +1,0 @@
-<button
-  class="font-medium font-raleway
-  hover:font-bold hover:cursor-pointer hover:ease-linear hover:duration-100"
-
-  (click)="onButtonClick()"
-  [ngStyle]="{'color': isSelected() ? currentColor : ''}"
->
-  {{ name }}
-</button>
