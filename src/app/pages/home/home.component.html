@@ -47,7 +47,7 @@
   >
 
   <main
-    class="border border-red-500 h-2/4 p-2"
+    class="border border-red-500 p-2"
   >
 
     <section>
@@ -55,7 +55,7 @@
         class="border border-amber-500 w-1/2 flex flex-col gap-6"
       >
         <div
-          class="w-[10rem] lg:w-[38.625rem] md:w-[27rem] sm:w-[22rem] flex flex-col gap-4"
+          class="w-[9rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
         >
           <h1
             class="font-bold border lg:text-5xl md:text-3xl sm:text-2xl text-lg"
@@ -72,18 +72,26 @@
         </div>
 
         <div
-          class="flex gap-8 items-center"
+          class="flex md:gap-8 gap-4 items-center"
         >
           <app-secondary-button name="Commencer →"/>
 
           <div
             class="flex gap-2"
           >
-            <lucide-angular
-              [img]="playIcon"
-            ></lucide-angular>
+            <div
+              class="md:block hidden"
+            >
+              <lucide-angular
+                [img]="playIcon"
+              ></lucide-angular>
+            </div>
             <app-primary-button name="Bande D'annonce👀" />
           </div>
+        </div>
+
+        <div>
+          <app-announce-sticker/>
         </div>
       </aside>
 

@@ -5,6 +5,7 @@ import {SecondaryButtonComponent} from '../../shared/components/secondary-button
 import {CirclePlay, Cross, List, LucideAngularModule} from 'lucide-angular';
 import {NavbarComponent} from '../../shared/components/navbar/navbar.component';
 import {MenuBurgerComponent} from '../../shared/components/menu-burger/menu-burger.component';
+import {AnnounceStickerComponent} from '../../shared/components/announce-sticker/announce-sticker.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ import {MenuBurgerComponent} from '../../shared/components/menu-burger/menu-burg
     NavbarComponent,
     MenuBurgerComponent,
     SecondaryButtonComponent,
-    PrimaryButtonComponent
+    PrimaryButtonComponent,
+    AnnounceStickerComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
