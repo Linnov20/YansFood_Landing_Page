@@ -1,4 +1,4 @@
-import {Component, computed, Input, signal} from '@angular/core';
+import {Component, computed, Input} from '@angular/core';
 import {NgStyle} from '@angular/common';
 import {SelectedButtonService} from '../../../services/selected-button.service';
 
