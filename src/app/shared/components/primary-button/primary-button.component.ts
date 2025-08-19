@@ -7,6 +7,7 @@ import {SelectedButtonService} from '../../../services/selected-button.service';
   imports: [
     NgStyle
   ],
+  standalone: true,
   templateUrl: './primary-button.component.html',
   styleUrl: './primary-button.component.css'
 })

@@ -2,10 +2,11 @@ import { Component, Input } from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
-import {CirclePlay, Cross, List, LucideAngularModule} from 'lucide-angular';
+import {CirclePlay, LucideAngularModule} from 'lucide-angular';
 import {NavbarComponent} from '../../shared/components/navbar/navbar.component';
 import {MenuBurgerComponent} from '../../shared/components/menu-burger/menu-burger.component';
 import {AnnounceStickerComponent} from '../../shared/components/announce-sticker/announce-sticker.component';
+import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/card-with-phone.component';
 
 
 @Component({
@@ -20,6 +21,7 @@ import {AnnounceStickerComponent} from '../../shared/components/announce-sticker
     AnnounceStickerComponent
   ],
   templateUrl: './home.component.html',
+  standalone: true,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {

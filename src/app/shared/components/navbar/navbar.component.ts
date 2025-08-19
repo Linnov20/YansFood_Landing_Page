@@ -5,12 +5,13 @@ import {SecondaryButtonComponent} from "../secondary-button/secondary-button.com
 
 @Component({
   selector: 'app-navbar',
-    imports: [
-        NgOptimizedImage,
-        PrimaryButtonComponent,
-        SecondaryButtonComponent
-    ],
+  imports: [
+    NgOptimizedImage,
+    PrimaryButtonComponent,
+    SecondaryButtonComponent
+  ],
   templateUrl: './navbar.component.html',
+  standalone: true,
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {

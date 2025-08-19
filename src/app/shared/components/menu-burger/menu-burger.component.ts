@@ -13,6 +13,7 @@ import {SecondaryButtonComponent} from '../secondary-button/secondary-button.com
     SecondaryButtonComponent
   ],
   templateUrl: './menu-burger.component.html',
+  standalone: true,
   styleUrl: './menu-burger.component.css'
 })
 export class MenuBurgerComponent {
