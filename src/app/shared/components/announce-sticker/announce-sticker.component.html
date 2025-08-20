@@ -1,57 +1,87 @@
 <div
-  class="border border-fuchsia-400  flex "
+  class="border border-fuchsia-400 flex h-96"
 >
-  <span
-    class="font-bold text-9xl -rotate-[21deg] translate-y-[5.82rem] translate-x-1 z-40"
-  >
-    Y
-  </span>
-  <div
-    class="border border-lime-600 w-[32rem]"
-  >
-    <div
-      class="absolute bg-black w-[37rem] h-24 left-[4rem] -rotate-[20deg] rounded-r-lg z-30 shadow-[0px_5px_10px_rgba(255,85,85,0.5)]"
-    >
-    </div>
-    <div
-      class="absolute h-24 w-[24rem] -rotate-45 z-20 left-[18rem] translate-y-12 rounded-l-lg shadow-[5px_5px_10px_rgba(0,0,0,0.5)]"
-      style="background-color: #FF5555; background-image: url('/noise.png'); background-blend-mode: multiply; background-size: cover;"
-    >
 
-    </div>
+  <div
+    class="border border-red-500 h-80 flex translate-y-4 2xl:-translate-x-20"
+  >
+    <span
+      class="font-bold text-9xl -rotate-[21deg] translate-y-[5.87rem] translate-x-1 z-40"
+    >
+     Y
+    </span>
     <div
-      class="absolute left-[23.3rem] translate-y-[15.1rem] w-0 h-0 z-10"
-      style="
+      class="-translate-x-32 translate-y-1.5"
+    >
+      <div
+        class="border border-lime-600 w-[32rem]"
+      >
+        <div
+          class="absolute bg-black w-[37rem] h-24 left-[4rem] -rotate-[20deg] rounded-r-lg z-30 shadow-[0px_5px_10px_rgba(255,85,85,0.5)]"
+        >
+        </div>
+        <div
+          class="absolute h-24 w-[24rem] -rotate-45 z-20 left-[18rem] translate-y-12 rounded-l-lg shadow-[5px_5px_10px_rgba(0,0,0,0.5)]"
+          style="background-color: #FF5555; background-image: url('/noise.png'); background-blend-mode: multiply; background-size: cover;"
+        >
+
+        </div>
+        <div
+          class="absolute left-[23.3rem] translate-y-[15.1rem] w-0 h-0 z-10"
+          style="
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
       border-top: 20px solid #FF5555;
       transform: rotate(-45deg);
     "
-    ></div>
-    <div
-      class="absolute h-24 w-72 left-[23.2rem] translate-y-[10.3rem] rounded-lg z-0 shadow-2xl"
-      style="background-color: #FF5555; background-image: url('/noise.png'); background-blend-mode: multiply; background-size: cover;"
-    >
+        ></div>
+        <div
+          class="absolute h-24 w-72 left-[23.2rem] translate-y-[10.3rem] rounded-lg z-0 shadow-2xl"
+          style="background-color: #FF5555; background-image: url('/noise.png'); background-blend-mode: multiply; background-size: cover;"
+        >
+        </div>
+      </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
 
-<div>
+<div
+  class="border-2 border-green-400 w-[32rem] translate-x-16 -rotate-[20deg] absolute z-40 p-4 -translate-y-[22rem]"
+>
   <div
-    class="flex gap-2"
+    class="flex justify-between items-center w-full h-10 text-white"
   >
-    <div
-      class="rounded-full border border-red-400 w-4 p-4"
-    ></div>
-    <div>
+    @for (element of elements; track $index ){
+      <div
+        class="rounded-full border border-red-400 w-8 h-8"
+      ></div>
+      <div
+        class="flex flex-col text-xs"
+      >
           <span
             class="text-xs font-semibold"
-          >Commande</span>
+          >
+            {{ element.title }}
+          </span>
+        <span
+          class="text-xs font-medium"
+        >
+            {{ element.description }}
+          </span>
+      </div>
       <span
-        class="text-xs font-medium"
-      >Auprès Des Resto De Ta Localité</span>
-    </div>
+        class="text-4xl font-extralight"
+      >
+          {{ element.separator }}
+      </span>
+    }
   </div>
 </div>
+
+<span
+  class="text-sm font-bold -translate-y-72 -rotate-45 absolute z-10 translate-x-[18rem]"
+>
+  Tu Ne Verras Plus Les Restaurants Comme Avant.
+</span>
