@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Bell, Home, LucideAngularModule} from "lucide-angular";
+import {Bell, LucideAngularModule} from "lucide-angular";
 
 @Component({
   selector: 'app-title-xl-with-icon',
@@ -11,6 +11,6 @@ import {Bell, Home, LucideAngularModule} from "lucide-angular";
 })
 export class TitleXlWithIconComponent {
   @Input() title = 'Commande';
-  @Input() readonly icon = Bell;
+  @Input() icon = Bell;
 
 }

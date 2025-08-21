@@ -119,7 +119,7 @@
       class="border border-pink-500 flex"
     >
       <aside
-        class="w-1/2 border border-fuchsia-300"
+        class="w-1/2 border  h-[40rem]"
       >
         <app-card-with-phone
           [imgPath]="profilePath"
@@ -127,35 +127,115 @@
       </aside>
 
       <aside
-        class="w-1/2 flex flex-col gap-4"
+        class="w-1/2 flex flex-col gap-7"
       >
-        <div
-          class="flex flex-col gap-6"
-        >
-          <div>
-          <span
-            class="font-medium text-lg text-[#FF5555]"
-          >
-          A PROPOS
-        </span>
-            <h1
-              class="font-bold text-5xl"
+        <div>
+            <span
+              class="font-medium text-lg text-[#FF5555]"
             >
-              C'est Quoi YansFood?
-            </h1>
-          </div>
+              A PROPOS
+            </span>
+          <h1
+            class="font-bold text-5xl"
+          >
+            C'est Quoi YansFood?
+          </h1>
+        </div>
 
-          <div>
-            <app-title-lg-with-icon
-              title="Ne Faites plus les files d’attente"
+        @for (item of about; track $index){
+          <div
+            class="flex flex-col gap-1.5"
+          >
+            <div
+            >
+              <app-title-lg-with-icon
+                [title]=item.title
+                [icon]= item.icon
+              />
+            </div>
+            <span
+              class="text-lg w-full text-gray-500 font-medium"
+            >
+                {{ item.description }}
+              </span>
+          </div>
+        }
+      </aside>
+    </section>
+
+    <section
+      class="flex "
+    >
+      <aside
+        class="w-1/2 flex flex-col gap-7 justify-center"
+      >
+        <div>
+            <span
+              class="font-medium text-lg text-[#FF5555]"
+            >
+              PRESENTATION
+            </span>
+          <h1
+            class="font-bold text-5xl"
+          >
+            Bientôt, Tu Ne Verras Plus Les Restaurants Comme Avant.
+          </h1>
+        </div>
+
+        <div
+          class="flex flex-col gap-5"
+        >
+          <div
+          >
+            <app-title-xl-with-icon
+              title="Commande & livraison"
             />
           </div>
           <span
-            class="text-lg w-full text-gray-400 font-medium"
+            class="text-lg w-full text-gray-500 font-medium"
           >
-            YansFood est une application de commande et livraison de repas. commander dès à présent dans vos restaurant préféré et faites vous livrer le plus rapidement possible
+            Mare de devoir enduré des files d’attentes qui ne finissent près que jamais, ou alors de devoir te déplacer pour te trouver à manger? Eh ben t’es bien tombé, YansFood a été fait pour toi. Découvre dès maintenant l’application qui va te faire reconsidérer toutes les autres applications de commande et livraison de repas que tu as déjà pu utiliser. 😎
           </span>
         </div>
+
+      </aside>
+
+      <aside
+        class="border border-purple-800 w-1/2 h-[40rem]"
+      >
+        <app-card-with-phone
+          [imgPath]="foodDescPath"
+        />
+      </aside>
+    </section>
+
+    <section
+      class="flex "
+    >
+      <aside
+        class="border border-purple-800 w-1/2 h-[40rem]"
+      >
+        <app-card-with-phone
+          [imgPath]="announcePath"
+        />
+      </aside>
+
+      <aside
+        class="w-1/2 flex flex-col gap-5 justify-center"
+      >
+        <div
+        >
+          <app-title-xl-with-icon
+            title="Annonces"
+            [icon] = party_popper
+          />
+        </div>
+        <span
+          class="text-lg w-full text-gray-500 font-medium"
+        >
+            YansFood ne vous permet pas seulement de passer vos commandes et vous faire livrer vos repas. Découvrer notre page des annonces qui vous donne accès à toutes les promotion que font vous resto, mais pas seulement... restez connecté pour en savoir plus.😉
+        </span>
+
       </aside>
     </section>
   </main>
