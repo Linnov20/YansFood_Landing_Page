@@ -10,8 +10,6 @@ import {Home, LucideAngularModule} from 'lucide-angular';
   styleUrl: './title-lg-with-icon.component.css'
 })
 export class TitleLgWithIconComponent {
-  @Input() imgPath = '';
-  @Input() imgDescription = '';
   @Input() title = 'title';
   @Input() readonly icon = Home;
 }

@@ -1,42 +1,48 @@
 <div
-  class="border border-fuchsia-400 flex h-96"
+  class="sm:flex h-96 hidden"
 >
 
   <div
-    class="border border-red-500 h-80 flex translate-y-4 2xl:-translate-x-20"
+    class="h-80 flex
+           lg:translate-y-4 2xl:-translate-x-20"
   >
     <span
-      class="font-bold text-9xl -rotate-[21deg] translate-y-[5.87rem] translate-x-1 z-40"
+      class="font-bold -rotate-[21deg] z-40 text-9xl
+             translate-x-4 translate-y-7
+             md:translate-x-16 md:translate-y-[3.4rem]
+             lg:translate-y-[5.828rem] lg:translate-x-1"
     >
      Y
     </span>
     <div
-      class="-translate-x-32 translate-y-1.5"
+      class="lg:-translate-x-32 lg:translate-y-1.5"
     >
       <div
-        class="border border-lime-600 w-[32rem]"
+        class="md:w-[15rem] lg:w-[32rem]"
       >
         <div
-          class="absolute bg-black w-[37rem] h-24 left-[4rem] -rotate-[20deg] rounded-r-lg z-30 shadow-[0px_5px_10px_rgba(255,85,85,0.5)]"
+          class="absolute bg-black h-24 rounded-r-lg z-30 shadow-[0px_5px_10px_rgba(255,85,85,0.5)]
+                 w-[15rem] left-14
+                 md:w-[25rem] -rotate-[20deg] md:left-[6.2rem]
+                 lg:left-16 lg:w-[37rem]"
         >
         </div>
         <div
-          class="absolute h-24 w-[24rem] -rotate-45 z-20 left-[18rem] translate-y-12 rounded-l-lg shadow-[5px_5px_10px_rgba(0,0,0,0.5)]"
+          class="absolute h-24 z-20 rounded-l-lg shadow-[5px_5px_10px_rgba(0,0,0,0.5)]
+                 w-[13rem] left-[6.8rem] translate-y-[4.5rem] -rotate-[63deg]
+                 md:w-[20rem] md:left-[12.89rem] md:translate-y-[3.9rem] md:-rotate-[55deg]
+                 lg:w-[24rem] lg:left-[18rem] lg:translate-y-12 lg:-rotate-45
+                "
           style="background-color: #FF5555; background-image: url('/noise.png'); background-blend-mode: multiply; background-size: cover;"
         >
 
         </div>
         <div
-          class="absolute left-[23.3rem] translate-y-[15.1rem] w-0 h-0 z-10"
-          style="
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 20px solid #FF5555;
-      transform: rotate(-45deg);
-    "
-        ></div>
-        <div
-          class="absolute h-24 w-72 left-[23.2rem] translate-y-[10.3rem] rounded-lg z-0 shadow-2xl"
+          class="absolute h-24 rounded-lg z-0 shadow-2xl
+                 w-52 translate-y-[8.5rem] left-[12.6rem]
+                 md:w-60 md:left-[19.5rem] md:translate-y-[10.5rem]
+                 lg:w-72 lg:left-[23.2rem] lg:translate-y-[10.3rem]
+                "
           style="background-color: #FF5555; background-image: url('/noise.png'); background-blend-mode: multiply; background-size: cover;"
         >
         </div>
@@ -48,31 +54,39 @@
 
 
 <div
-  class="border-2 border-green-400 w-[32rem] translate-x-16 -rotate-[20deg] absolute z-40 p-4 -translate-y-[22rem]"
+  class="absolute z-40 -rotate-[20deg] hidden sm:block
+         w-[15rem] translate-x-[3rem] -translate-y-[22.5rem]
+         md:w-[23rem] md:p-2 md:translate-x-[6.5rem] md:-translate-y-[23rem]
+         lg:translate-x-16 lg:p-4 lg:w-[32rem] lg:-translate-y-[22rem]"
 >
   <div
     class="flex justify-between items-center w-full h-10 text-white"
   >
     @for (element of elements; track $index ){
       <div
-        class="rounded-full border border-red-400 w-8 h-8"
+        class="rounded-full border border-red-400
+               w-4 h-4
+               md:w-6 md:h-6 lg:w-8 lg:h-8"
       ></div>
       <div
-        class="flex flex-col text-xs"
+        class="flex flex-col
+               text-[8px] w-20
+               md:text-[10px] md:w-28 lg:w-max lg:text-xs
+              "
       >
           <span
-            class="text-xs font-semibold"
+            class="font-semibold"
           >
             {{ element.title }}
           </span>
         <span
-          class="text-xs font-medium"
+          class="font-medium"
         >
             {{ element.description }}
           </span>
       </div>
       <span
-        class="text-4xl font-extralight"
+        class="text-3xl lg:text-4xl font-extralight"
       >
           {{ element.separator }}
       </span>
@@ -81,7 +95,11 @@
 </div>
 
 <span
-  class="text-sm font-bold -translate-y-72 -rotate-45 absolute z-10 translate-x-[18rem]"
+  class="font-bold absolute z-20 hidden sm:block
+         -rotate-[63deg] text-[10px] translate-x-[6rem] -translate-y-[18rem]
+         md:-rotate-[55deg] md:text-xs md:translate-x-[13rem] md:-translate-y-[17.5rem]
+         lg:-rotate-45 lg:text-sm lg:translate-x-[18rem] lg:-translate-y-72
+        "
 >
   Tu Ne Verras Plus Les Restaurants Comme Avant.
 </span>
