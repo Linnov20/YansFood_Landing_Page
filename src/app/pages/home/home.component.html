@@ -51,10 +51,10 @@
   >
 
     <section
-      class="flex"
+      class="flex border border-teal-600"
     >
       <aside
-        class="border border-amber-500 w-1/2 flex flex-col gap-6"
+        class=" w-1/2 flex flex-col gap-6"
       >
         <div
           class="w-[9rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
@@ -98,10 +98,10 @@
       </aside>
 
       <aside
-        class="border border-pink-500 w-1/2 flex justify-center"
+        class="w-1/2 flex justify-center"
       >
         <div
-          class="border-2 border-emerald-500 absolute m-auto xl:-translate-y-[9rem]
+          class="absolute m-auto xl:-translate-y-[9rem]
                  xl:-translate-x-16 lg:-translate-x-8 md:-translate-x-4 md:-translate-[7rem]
                  sm:-translate-x-8 sm:-translate-y-[5rem]
                  translate-y-[3rem]
@@ -111,6 +111,50 @@
             class="w-full"
             ngSrc="/triple-phone.svg" alt="phone-image" width="721" height="897"
           >
+        </div>
+      </aside>
+    </section>
+
+    <section
+      class="border border-pink-500 flex"
+    >
+      <aside
+        class="w-1/2 border border-fuchsia-300"
+      >
+        <app-card-with-phone
+          [imgPath]="profilePath"
+        />
+      </aside>
+
+      <aside
+        class="w-1/2 flex flex-col gap-4"
+      >
+        <div
+          class="flex flex-col gap-6"
+        >
+          <div>
+          <span
+            class="font-medium text-lg text-[#FF5555]"
+          >
+          A PROPOS
+        </span>
+            <h1
+              class="font-bold text-5xl"
+            >
+              C'est Quoi YansFood?
+            </h1>
+          </div>
+
+          <div>
+            <app-title-lg-with-icon
+              title="Ne Faites plus les files d’attente"
+            />
+          </div>
+          <span
+            class="text-lg w-full text-gray-400 font-medium"
+          >
+            YansFood est une application de commande et livraison de repas. commander dès à présent dans vos restaurant préféré et faites vous livrer le plus rapidement possible
+          </span>
         </div>
       </aside>
     </section>

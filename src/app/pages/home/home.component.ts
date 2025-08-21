@@ -6,6 +6,8 @@ import {CirclePlay, LucideAngularModule} from 'lucide-angular';
 import {NavbarComponent} from '../../shared/components/navbar/navbar.component';
 import {MenuBurgerComponent} from '../../shared/components/menu-burger/menu-burger.component';
 import {AnnounceStickerComponent} from '../../shared/components/announce-sticker/announce-sticker.component';
+import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/card-with-phone.component';
+import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-icon/title-lg-with-icon.component';
 
 
 @Component({
@@ -18,6 +20,8 @@ import {AnnounceStickerComponent} from '../../shared/components/announce-sticker
     SecondaryButtonComponent,
     PrimaryButtonComponent,
     AnnounceStickerComponent,
+    CardWithPhoneComponent,
+    TitleLgWithIconComponent,
   ],
   templateUrl: './home.component.html',
   standalone: true,
@@ -30,6 +34,8 @@ export class HomeComponent {
     'Partenaire',
     'Guide'
   ];
+
+  profilePath : string = '/profile-screen.svg'
   protected readonly  playIcon = CirclePlay;
 
   menuDisplay = false
