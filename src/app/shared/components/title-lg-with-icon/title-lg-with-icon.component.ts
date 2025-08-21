@@ -11,5 +11,5 @@ import {Home, LucideAngularModule} from 'lucide-angular';
 })
 export class TitleLgWithIconComponent {
   @Input() title = 'title';
-  @Input() readonly icon = Home;
+  @Input() icon = Home;
 }

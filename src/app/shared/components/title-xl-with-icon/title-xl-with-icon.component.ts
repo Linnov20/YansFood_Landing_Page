@@ -11,6 +11,6 @@ import {Bell, Home, LucideAngularModule} from "lucide-angular";
 })
 export class TitleXlWithIconComponent {
   @Input() title = 'Commande';
-  @Input() readonly icon = Bell;
+  @Input() icon = Bell;
 
 }
