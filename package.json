@@ -20,6 +20,7 @@
     "@angular/router": "^19.2.0",
     "@radix-ng/primitives": "^0.39.1",
     "@tailwindcss/postcss": "^4.1.7",
+    "@vercel/speed-insights": "^1.2.0",
     "lucide-angular": "^0.513.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
