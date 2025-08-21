@@ -6,6 +6,10 @@ import {CirclePlay, LucideAngularModule} from 'lucide-angular';
 import {NavbarComponent} from '../../shared/components/navbar/navbar.component';
 import {MenuBurgerComponent} from '../../shared/components/menu-burger/menu-burger.component';
 import {AnnounceStickerComponent} from '../../shared/components/announce-sticker/announce-sticker.component';
+import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/card-with-phone.component';
+import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-icon/title-lg-with-icon.component';
+import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-icon/title-xl-with-icon.component';
+import {EllipseComponent} from '../../shared/components/ellipse/ellipse.component';
 
 
 @Component({
@@ -17,7 +21,7 @@ import {AnnounceStickerComponent} from '../../shared/components/announce-sticker
     MenuBurgerComponent,
     SecondaryButtonComponent,
     PrimaryButtonComponent,
-    AnnounceStickerComponent
+    AnnounceStickerComponent,
   ],
   templateUrl: './home.component.html',
   standalone: true,
