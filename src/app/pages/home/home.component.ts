@@ -3,7 +3,6 @@ import {NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
 import {
-  Box,
   CirclePlay,
   LucideAngularModule,
   PartyPopper,
