@@ -16,6 +16,7 @@ import {AnnounceStickerComponent} from '../../shared/components/announce-sticker
 import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/card-with-phone.component';
 import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-icon/title-lg-with-icon.component';
 import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-icon/title-xl-with-icon.component';
+import {EllipseComponent} from '../../shared/components/ellipse/ellipse.component';
 
 
 @Component({
@@ -31,6 +32,7 @@ import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-ic
     CardWithPhoneComponent,
     TitleLgWithIconComponent,
     TitleXlWithIconComponent,
+    EllipseComponent,
   ],
   templateUrl: './home.component.html',
   standalone: true,

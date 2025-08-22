@@ -57,7 +57,7 @@
         class=" w-1/2 flex flex-col gap-6"
       >
         <div
-          class="w-[9rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
+          class="w-[13rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
         >
           <h1
             class="font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg"
@@ -104,7 +104,7 @@
           class="absolute m-auto xl:-translate-y-[9rem]
                  xl:-translate-x-16 lg:-translate-x-8 md:-translate-x-4 md:-translate-[7rem]
                  sm:-translate-x-8 sm:-translate-y-[5rem]
-                 translate-y-[3rem]
+                 -translate-y-[2rem]
                 "
         >
           <img
@@ -116,18 +116,19 @@
     </section>
 
     <section
-      class="border border-pink-500 flex"
+      class="border border-pink-500 flex sm:flex-row flex-col"
     >
       <aside
-        class="w-1/2 border  h-[40rem]"
+        class="w-1/2 sm:h-[40rem] sm:flex hidden"
       >
         <app-card-with-phone
+          class="lg:relative lg:left-auto lg:bottom-auto sm:absolute -left-8 -bottom-[55rem]"
           [imgPath]="profilePath"
         />
       </aside>
 
       <aside
-        class="w-1/2 flex flex-col gap-7"
+        class="sm:w-1/2 flex flex-col gap-7 w-full"
       >
         <div>
             <span
@@ -135,11 +136,23 @@
             >
               A PROPOS
             </span>
-          <h1
-            class="font-bold text-5xl"
+          <div
+            class="flex items-center sm:block"
           >
-            C'est Quoi YansFood?
-          </h1>
+            <h1
+              class="font-bold sm:text-5xl text-4xl"
+            >
+              C'est Quoi YansFood?
+            </h1>
+            <aside
+              class="w-full h-32 sm:hidden"
+            >
+              <app-card-with-phone
+                class="lg:relative sm:absolute -left-8 -bottom-[38rem]"
+                [imgPath]="profilePath"
+              />
+            </aside>
+          </div>
         </div>
 
         @for (item of about; track $index){
@@ -161,13 +174,15 @@
           </div>
         }
       </aside>
+
+
     </section>
 
     <section
       class="flex "
     >
       <aside
-        class="w-1/2 flex flex-col gap-7 justify-center"
+        class="sm:w-1/2 flex flex-col gap-7 justify-center w-full"
       >
         <div>
             <span
@@ -175,11 +190,24 @@
             >
               PRESENTATION
             </span>
-          <h1
-            class="font-bold text-5xl"
+          <div
+            class="flex items-center sm:block"
           >
-            Bientôt, Tu Ne Verras Plus Les Restaurants Comme Avant.
-          </h1>
+            <h1
+              class="font-bold sm:text-5xl text-4xl"
+            >
+              Bientôt, Tu Ne Verras Plus Les Restaurants Comme Avant.
+            </h1>
+            <aside
+              class="w-full h-32 sm:hidden"
+            >
+              <app-card-with-phone
+                class="lg:relative sm:absolute -left-8 -bottom-[38rem]"
+                [imgPath]="foodDescPath"
+              />
+            </aside>
+          </div>
+
         </div>
 
         <div
@@ -194,16 +222,20 @@
           <span
             class="text-lg w-full text-gray-500 font-medium"
           >
-            Mare de devoir enduré des files d’attentes qui ne finissent près que jamais, ou alors de devoir te déplacer pour te trouver à manger? Eh ben t’es bien tombé, YansFood a été fait pour toi. Découvre dès maintenant l’application qui va te faire reconsidérer toutes les autres applications de commande et livraison de repas que tu as déjà pu utiliser. 😎
+            Marre de devoir enduré des files d’attentes qui ne finissent près que jamais, ou alors de devoir te déplacer
+            pour te trouver à manger? Eh ben t’es bien tombé, YansFood a été fait pour toi. Découvre dès maintenant
+            l’application qui va te faire reconsidérer toutes les autres applications de commande et livraison de repas
+            que tu as déjà pu utiliser. 😎
           </span>
         </div>
 
       </aside>
 
       <aside
-        class="border border-purple-800 w-1/2 h-[40rem]"
+        class="w-1/2 sm:h-[40rem] sm:flex justify-center hidden"
       >
         <app-card-with-phone
+          class="lg:relative lg:left-auto lg:bottom-auto absolute right-32 -bottom-[102rem]"
           [imgPath]="foodDescPath"
         />
       </aside>
@@ -213,30 +245,145 @@
       class="flex "
     >
       <aside
-        class="border border-purple-800 w-1/2 h-[40rem]"
+        class="w-1/2 h-[40rem] sm:flex hidden"
       >
         <app-card-with-phone
+          class="lg:relative lg:left-auto lg:bottom-auto absolute -left-10"
           [imgPath]="announcePath"
         />
       </aside>
 
       <aside
-        class="w-1/2 flex flex-col gap-5 justify-center"
+        class="w-full flex flex-col gap-5 p-0 h-auto
+               sm:justify-end sm:w-1/2 justify-center sm:h-96 sm:pb-12
+              "
       >
         <div
+          class="flex items-center sm:block"
         >
-          <app-title-xl-with-icon
-            title="Annonces"
-            [icon] = party_popper
-          />
+          <div
+            class="sm:w-full w-1/2"
+          >
+            <div
+            >
+              <app-title-xl-with-icon
+                title="Annonces"
+                [icon] = party_popper
+              />
+            </div>
+            <span
+              class="text-lg w-full text-gray-500 font-medium"
+            >
+              YansFood ne vous permet pas seulement de passer vos commandes et vous faire livrer vos repas. Découvrer notre page des annonces qui vous donne accès à toutes les promotion que font vous resto, mais pas seulement... restez connecté pour en savoir plus.😉
+            </span>
+          </div>
+
+
+          <aside
+            class="w-1/2 sm:hidden h-72 flex justify-center"
+          >
+            <app-card-with-phone
+              [imgPath]="announcePath"
+            />
+          </aside>
         </div>
-        <span
-          class="text-lg w-full text-gray-500 font-medium"
-        >
-            YansFood ne vous permet pas seulement de passer vos commandes et vous faire livrer vos repas. Découvrer notre page des annonces qui vous donne accès à toutes les promotion que font vous resto, mais pas seulement... restez connecté pour en savoir plus.😉
-        </span>
+
 
       </aside>
+    </section>
+
+    <section>
+      <h3
+        class="font-medium text-lg w-full h-24 flex items-center justify-center"
+      >
+        NOS PARTENAIRES
+      </h3>
+      <div
+        class="flex items-center gap-8"
+      >
+        <aside
+          class="w-1/2"
+        >
+          <div>
+            <div
+              class="absolute w-1/2 flex justify-center items-center lg:h-[35rem]"
+            >
+              <div
+                class="absolute bg-black rounded-full w-52 h-52"
+              ></div>
+            </div>
+            <div
+              class="absolute w-1/7 flex justify-end items-end lg:h-1/4"
+            >
+              <div
+                class="absolute bg-cyan-950 rounded-full w-24 h-24"
+              ></div>
+            </div>
+            <div
+              class="absolute w-1/6 flex justify-end items-end lg:h-4/5"
+            >
+              <div
+                class="absolute bg-green-950 rounded-full w-24 h-24"
+              ></div>
+            </div>
+            <div
+              class="absolute w-[41%] flex justify-end items-end lg:h-4/5"
+            >
+              <div
+                class="absolute bg-red-950 rounded-full w-24 h-24"
+              ></div>
+            </div>
+            <div
+              class="absolute w-[41%] flex justify-end items-end lg:h-1/4"
+            >
+              <div
+                class="absolute bg-amber-950 rounded-full w-24 h-24"
+              ></div>
+            </div>
+          </div>
+
+          <div>
+            <app-ellipse/>
+          </div>
+        </aside>
+        <aside
+          class="w-2/5 flex flex-col gap-4 "
+        >
+          <h2
+            class="font-semibold text-[28px]"
+          >
+            Les Meilleures Restaurant De Votre Localité
+          </h2>
+          <p
+            class="text-lg text-gray-500 font-medium"
+          >
+            C’est avec précision et munituion que nous avons fait le choix de nos partenaires. nous avons ainsi le
+            plaisir de vous annoncer que les restaurant tels que Ucac-Icam, bâche bleue, Zeduc, la Grâce et bien
+            d’autres sont nos partenaires.
+          </p>
+
+          <div
+            class="h-28 flex flex-col justify-center gap-2"
+          >
+            <h3
+              class="font-semibold text-lg"
+            >
+              Nos Partenaires
+            </h3>
+            <div
+              class="flex gap-2"
+            >
+              @for (items of about; track $index) {
+                <div
+                  class="rounded-full w-10 h-10 bg-red-500"
+                >
+                  &nbsp;
+                </div>
+              }
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
   </main>
 
