@@ -4,9 +4,9 @@ import {PrimaryButtonComponent} from '../../shared/components/primary-button/pri
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
 import {
   CirclePlay,
-  LucideAngularModule,
-  PartyPopper,
-  Sparkle,
+  LucideAngularModule, Mail,
+  PartyPopper, Phone, Play,
+  Sparkle, Store, StoreIcon,
   TruckElectric,
   UtensilsCrossed
 } from 'lucide-angular';
@@ -54,7 +54,9 @@ export class HomeComponent {
   protected readonly utensils_crossed = UtensilsCrossed
   protected readonly truck_electric = TruckElectric;
   protected readonly party_popper = PartyPopper
-
+  protected readonly play_store = Play
+  protected readonly mail = Mail;
+  protected readonly phone = Phone
 
   about = [
     {
@@ -73,6 +75,39 @@ export class HomeComponent {
       description : "Restez à l’affut des promotions dans vos restaurants depuis votre téléphone et observer rencontrer les facades cachées de ceux-ci. "
     }
   ]
+
+  contacts = [
+    {
+      icon : this.mail,
+      text : "contact@yansFood.com"
+    },
+    {
+      icon : this.phone,
+      text : "+237 658 532 272"
+    }
+  ]
+
+  links = [
+    "Acceuil",
+    "Présenatation",
+    "Partenaires",
+    "Guide"
+  ]
+
+  legal = [
+    "Conditions D'utilisation",
+    "Politique Confidentialité",
+    "Politique Des Cookies",
+  ]
+
+  produit = [
+    "YansFood",
+    "YansFood Restaurant",
+    "YansDeleiver",
+
+  ]
+
+
 
   menuDisplay = false
 
