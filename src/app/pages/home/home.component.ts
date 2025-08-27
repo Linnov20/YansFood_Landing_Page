@@ -6,7 +6,7 @@ import {
   CirclePlay,
   LucideAngularModule, Mail,
   PartyPopper, Phone, Play,
-  Sparkle, Store, StoreIcon,
+  Sparkle,
   TruckElectric,
   UtensilsCrossed
 } from 'lucide-angular';
