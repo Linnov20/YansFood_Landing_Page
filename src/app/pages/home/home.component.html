@@ -1,5 +1,5 @@
 <div
-  class="flex flex-col gap-2 h-screen"
+  class="flex flex-col gap-2"
 >
   <div
     class="sm:hidden xs:block bg-amber-100 absolute h-full border w-full z-0"
@@ -7,7 +7,7 @@
   >
   </div>
   <header
-    class="flex items-center w-full
+    class="flex items-center w-full z-10
            lg:pl-12 lg:pr-12 lg:h-1/4 xs:h-28 xs:pr-6 xs:pl-6"
   >
 
@@ -48,9 +48,8 @@
   >
 
   <main
-    class="p-2"
+    class="p-2 pl-4"
   >
-
     <section
       class="flex "
     >
@@ -60,14 +59,21 @@
         <div
           class="w-[13rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
         >
-          <h1
-            class="font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg"
+          <div
+            class="absolute z-0 translate-x-40 -translate-y-20"
           >
-            Ils commandent encore sur WhatsApp. Toi, tu vas faire mieux.
+            <app-bg-blur/>
+          </div>
+          <h1
+            class="font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg z-10"
+          >
+            Ils Commandent Encore Sur WhatsApp. Toi,Tu Vas Faire Mieux.
           </h1>
 
+
+
           <span
-            class="font-medium text-xs lg:text-lg text-gray-600 md:text-base sm:text-sm "
+            class="font-medium text-xs z-10 lg:text-lg text-gray-600 md:text-base sm:text-sm "
           >
           Découvrez YansFood, Notre application de Commande et Livraison de Repas.
           Fini les Files D’attente… Bientôt, Tu Commandes Comme Un Boss!
@@ -98,11 +104,16 @@
         </div>
       </aside>
 
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute bottom-20 left-32 rotate-45 "
+      >
+
       <aside
         class="w-1/2 flex justify-center"
       >
         <div
-          class="absolute m-auto xl:-translate-y-[9rem]
+          class="absolute z-10 m-auto xl:-translate-y-[9rem]
                  xl:translate-x-2 lg:-translate-x-8 md:-translate-x-4 md:-translate-[7rem]
                  sm:-translate-x-8 sm:-translate-y-[5rem]
                  -translate-y-[2rem]
@@ -113,32 +124,52 @@
             ngSrc="/triple-phone.svg" alt="phone-image" width="721" height="897"
           >
         </div>
+        <div
+          class="absolute z-0 bottom-1/3 rotate-45"
+        >
+          <app-bg-blur
+            [redColorUp]=false
+          />
+        </div>
       </aside>
+
+
     </section>
 
     <section
       class="flex sm:flex-row flex-col"
     >
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute rotate-45 "
+      >
       <aside
         class="w-1/2 sm:h-[40rem] sm:flex hidden"
       >
         <app-card-with-phone
-          class="lg:relative lg:left-auto lg:bottom-auto sm:absolute -left-8 -bottom-[55rem]"
+          class="z-10 lg:relative lg:left-auto lg:bottom-auto sm:absolute -left-8 -bottom-[55rem]"
           [imgPath]="profilePath"
         />
+        <div
+          class="absolute z-0 left-1/12"
+        >
+          <app-bg-blur
+            [redColorUp]=false
+          />
+        </div>
       </aside>
 
       <aside
         class="sm:w-1/2 flex flex-col gap-7 w-full"
       >
         <div>
-            <span
+          <span
               class="font-medium text-lg text-[#FF5555]"
             >
               A PROPOS
             </span>
           <div
-            class="flex items-center sm:block"
+            class="flex items-center sm:block z-10"
           >
             <h1
               class="font-bold sm:text-5xl text-4xl"
@@ -155,10 +186,16 @@
             </aside>
           </div>
         </div>
+        <div
+          class="absolute z-0 right-1/10 translate-y-32"
+        >
+          <app-bg-blur
 
+          />
+        </div>
         @for (item of about; track $index){
           <div
-            class="flex flex-col gap-1.5"
+            class="flex flex-col gap-1.5 z-10"
           >
             <div
             >
@@ -236,10 +273,21 @@
         class="w-1/2 sm:h-[40rem] sm:flex justify-center hidden"
       >
         <app-card-with-phone
-          class="lg:relative lg:left-auto lg:bottom-auto absolute right-32 -bottom-[102rem]"
+          class="lg:relative lg:left-auto lg:bottom-auto absolute right-32 -bottom-[102rem] z-10"
           [imgPath]="foodDescPath"
         />
+        <div
+          class="absolute z-0 -translate-x-52 translate-y-48 rotate-6 "
+        >
+          <app-bg-blur
+          />
+        </div>
       </aside>
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute right-2 w-14"
+      >
+
     </section>
 
     <section
@@ -249,11 +297,21 @@
         class="w-1/2 h-[40rem] sm:flex hidden"
       >
         <app-card-with-phone
-          class="lg:relative lg:left-auto lg:bottom-auto absolute -left-10"
+          class="lg:relative lg:left-auto lg:bottom-auto absolute -left-10 z-10"
           [imgPath]="announcePath"
         />
+        <div
+          class="absolute z-0 left-1/6 translate-y-40 rotate-12 "
+        >
+          <app-bg-blur
+            [redColorUp]=false
+          />
+        </div>
       </aside>
-
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute left-1/2 right-1/2 rotate-45"
+      >
       <aside
         class="w-full flex flex-col gap-5 p-0 h-auto
                sm:justify-end sm:w-1/2 justify-center sm:h-96 sm:pb-12
@@ -293,7 +351,14 @@
       </aside>
     </section>
 
-    <section>
+    <img
+      ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+      class="absolute right-32 -bottom-[137rem] w-14"
+    >
+
+    <section
+      class="h-[45rem]"
+    >
       <h3
         class="font-medium text-lg w-full h-24 flex items-center justify-center"
       >
@@ -305,47 +370,57 @@
         <aside
           class="w-1/2"
         >
-          <div>
+          <div
+            class="z-10"
+          >
             <div
               class="absolute w-1/2 flex justify-center items-center
                      lg:h-[35rem] md:h-[26.25rem] sm:h-[21.875rem] xs:h-[9rem]
                      "
             >
               <div
-                class="absolute bg-black rounded-full w-52 h-52"
+                class="absolute bg-black rounded-full w-52 h-52 z-10"
               ></div>
             </div>
             <div
               class="absolute w-1/7 flex justify-end items-end h-1/4"
             >
               <div
-                class="absolute bg-cyan-950 rounded-full w-24 h-24"
+                class="absolute bg-cyan-950 rounded-full w-24 h-24 z-10"
               ></div>
             </div>
             <div
               class="absolute w-1/6 flex justify-end items-end h-4/5"
             >
               <div
-                class="absolute bg-green-950 rounded-full w-24 h-24"
+                class="absolute bg-green-950 rounded-full w-24 h-24 z-10"
               ></div>
             </div>
             <div
               class="absolute w-2/5 flex justify-end items-end h-5/6"
             >
               <div
-                class="absolute bg-red-950 rounded-full w-24 h-24"
+                class="absolute bg-red-950 rounded-full w-24 h-24 z-10"
               ></div>
             </div>
             <div
               class="absolute w-[41%] flex justify-end items-end h-1/4"
             >
               <div
-                class="absolute bg-amber-950 rounded-full w-24 h-24"
+                class="absolute bg-amber-950 rounded-full w-24 h-24 z-10"
               ></div>
             </div>
           </div>
+          <div
+            class="absolute z-0 left-1/10 translate-y-60"
+          >
+            <app-bg-blur
+            />
+          </div>
 
-          <div>
+          <div
+            class="z-0"
+          >
             <app-ellipse/>
           </div>
         </aside>
@@ -389,8 +464,12 @@
       </div>
     </section>
 
+    <img
+      ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+      class="absolute rotate-45 -translate-y-16 left-0"
+    >
+
     <section
-      class=""
     >
       <div
         class=""
@@ -411,7 +490,7 @@
         class="flex flex-col gap-5 p-12 items-center"
       >
         <div
-          class="border border-amber-700 flex gap-10 items-center"
+          class="flex gap-10 items-center"
         >
           <div
             class="bg-[#F14237] rounded-lg w-1/2 p-5 text-white"
@@ -430,6 +509,10 @@
           <div
             class="w-1/2 p-5 "
           >
+            <img
+              ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+              class="absolute translate-x-12 w-14 -translate-y-16"
+            >
             <h3
               class="font-semibold text-[28px]"
             >
@@ -479,11 +562,22 @@
         Installation Sur Un iPhone
       </h1>
 
+
       <div
         class="h-[58rem]"
       >
+        <img
+          ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+          class="absolute rotate-45 translate-y-96 left-0"
+        >
         <div
-          class="absolute"
+          class="absolute z-0 rotate-45 translate-x-20 translate-y-16"
+        >
+          <app-bg-blur
+          />
+        </div>
+        <div
+          class="absolute -translate-x-2 z-10"
         >
            <div
              class="font-semibold text-[28px] translate-y-7 ml-32"
@@ -525,8 +619,12 @@
             Étape 4
           </div>
           <img
-            class=""
+            class="z-0"
             ngSrc="/phone_screen.svg" alt="home screen" width="450" height="705"
+          >
+          <img
+            ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+            class="absolute w-14 -translate-y-[50rem] right-24 z-10"
           >
         </div>
 
@@ -539,7 +637,7 @@
     class="flex flex-col gap-4"
   >
     <div
-      class="flex pr-2 pt-8 pl-4 pb-12 gap-15"
+      class="flex pr-2 pt-8 pl-6 pb-12 gap-15"
     >
       <section
 
@@ -624,14 +722,18 @@
         </h1>
 
         <span
-          class="font-medium"
+          class="font-medium z-10"
         >
-        Rester À Jour
-      </span>
+         Rester À Jour
+       </span>
 
         <div
-          class="flex gap-3 bg-white drop-shadow p-2 rounded-sm"
+          class="flex gap-3 bg-white drop-shadow p-2 rounded-sm z-10"
         >
+          <img
+            ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+            class="absolute w-14 -translate-y-32 -right-1/10 z-10"
+          >
           <input
             class="focus:outline-none p-1 w-1/2"
             type="text" placeholder="Your Email"
@@ -642,12 +744,22 @@
             Subscribe
           </button>
         </div>
+        <div
+          class="absolute z-0 right-1/5 translate-y-16"
+        >
+          <app-bg-blur
+          />
+        </div>
       </section>
     </div>
 
     <section
-      class="w-full flex flex-col items-center h-28"
+      class="w-full flex flex-col items-center h-28 z-10"
     >
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute w-14 -left-2 -translate-y-16"
+      >
       <div
         class="h-0.5 w-full bg-gradient-to-r from-[#16161600] via-[#696969] to-[#16161600]"
       ></div>

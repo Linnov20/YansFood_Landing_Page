@@ -17,6 +17,7 @@ import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/ca
 import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-icon/title-lg-with-icon.component';
 import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-icon/title-xl-with-icon.component';
 import {EllipseComponent} from '../../shared/components/ellipse/ellipse.component';
+import {BgBlurComponent} from '../../shared/components/bg-blur/bg-blur.component';
 
 
 @Component({
@@ -33,6 +34,7 @@ import {EllipseComponent} from '../../shared/components/ellipse/ellipse.componen
     TitleLgWithIconComponent,
     TitleXlWithIconComponent,
     EllipseComponent,
+    BgBlurComponent,
   ],
   templateUrl: './home.component.html',
   standalone: true,
