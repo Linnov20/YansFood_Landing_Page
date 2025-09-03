@@ -20,8 +20,8 @@
     </div>
 
     <div
-      class="flex justify-end transform absolute translate-x-[50rem] 2xl:translate-x-[60rem]
-             lg:left-96 xs:top-20 lg:top-16"
+      class="flex justify-end transform absolute h-40 items-end w-full max-w-[1280px] m-auto pr-12"
+
     >
       <img ngSrc="/Star.svg" alt="star-image" height="58" width="62"
            class="lg:w-14 lg:h-12 xl:w-16 xl:h-14 md:w-12 md:h-10
@@ -48,7 +48,7 @@
   >
 
   <main
-    class="p-2 pl-4"
+    class="p-2 pl-4 sm:block flex flex-col gap-10"
   >
     <section
       class="flex "
@@ -60,7 +60,7 @@
           class="w-[13rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
         >
           <div
-            class="absolute z-0 translate-x-40 -translate-y-20"
+            class="absolute z-0 lg:translate-x-40 lg:-translate-y-20 md:translate-x-32 md:-translate-y-12"
           >
             <app-bg-blur/>
           </div>
@@ -69,8 +69,6 @@
           >
             Ils Commandent Encore Sur WhatsApp. Toi,Tu Vas Faire Mieux.
           </h1>
-
-
 
           <span
             class="font-medium text-xs z-10 lg:text-lg text-gray-600 md:text-base sm:text-sm "
@@ -106,7 +104,7 @@
 
       <img
         ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-        class="absolute bottom-20 left-32 rotate-45 "
+        class="absolute lg:translate-y-[35rem] translate-y-[38rem] sm:block hidden rotate-45 "
       >
 
       <aside
@@ -125,7 +123,7 @@
           >
         </div>
         <div
-          class="absolute z-0 translate-y-[15rem] rotate-45 border-2 border-rose-700"
+          class="absolute z-0 lg:translate-y-60 rotate-45 md:translate-y-44 sm:translate-y-28 translate-y-12"
         >
           <app-bg-blur
             [redColorUp]=false
@@ -141,7 +139,7 @@
     >
       <img
         ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-        class="absolute rotate-45 "
+        class="absolute rotate-45 z-0 sm:block hidden"
       >
       <aside
         class="w-1/2 sm:h-[40rem] sm:flex hidden"
@@ -151,7 +149,7 @@
           [imgPath]="profilePath"
         />
         <div
-          class="absolute z-0 left-1/12 "
+          class="absolute z-0"
         >
           <app-bg-blur
             [redColorUp]=false
@@ -167,9 +165,9 @@
               class="font-medium text-lg text-[#FF5555]"
             >
               A PROPOS
-            </span>
+          </span>
           <div
-            class="flex items-center sm:block z-10"
+            class="flex sm:block z-10"
           >
             <h1
               class="font-bold sm:text-5xl text-4xl"
@@ -187,10 +185,12 @@
           </div>
         </div>
         <div
-          class="absolute z-0 translate-y-32 2xl:translate-x-[26rem] translate-x-[32rem]"
+          class="absolute z-0 border -rotate-90 translate-x-72 translate-y-[30rem]
+                 2xl:translate-y-60  2xl:translate-x-[26rem] 2xl:rotate-none xl:translate-y-96 xl:translate-x-[24rem]
+                "
         >
           <div
-            class="absolute w-36 h-[26rem]  bg-white z-10 translate-x-[13.5rem] -translate-y-24 hidden 2xl:block"
+            class="absolute w-36 h-[26rem] bg-white z-10  xl:translate-x-[13.5rem] -translate-y-24 hidden 2xl:block"
           >
           </div>
           <app-bg-blur
@@ -236,7 +236,7 @@
             class="flex items-center sm:block"
           >
             <h1
-              class="font-bold sm:text-5xl text-4xl"
+              class="font-bold sm:text-5xl text-3xl"
             >
               Bientôt, Tu Ne Verras Plus Les Restaurants Comme Avant.
             </h1>
@@ -287,10 +287,14 @@
           />
         </div>
       </aside>
-      <img
-        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-        class="absolute translate-x-[75rem] 2xl:translate-x-[76rem] w-14"
+      <div
+        class="absolute w-full max-w-[1280px] pr-4 h-16 flex justify-end"
       >
+        <img
+          ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+          class="absolute w-14"
+        >
+      </div>
 
     </section>
 
@@ -305,7 +309,7 @@
           [imgPath]="announcePath"
         />
         <div
-          class="absolute z-0 left-1/6 translate-y-40 rotate-12 "
+          class="absolute z-0 md:translate-x-48 md:translate-y-40 translate-x-36 rotate-12 "
         >
           <app-bg-blur
             [redColorUp]=false
@@ -317,7 +321,7 @@
         class="absolute left-1/2 right-1/2 rotate-45"
       >
       <aside
-        class="w-full flex flex-col gap-5 p-0 h-auto
+        class="w-full flex flex-col gap-5 p-0 h-auto z-20
                sm:justify-end sm:w-1/2 justify-center sm:h-96 sm:pb-12
               "
       >
@@ -357,11 +361,11 @@
 
     <img
       ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-      class="absolute right-32 -bottom-[137rem] w-14"
+      class="absolute w-14 sm:block hidden"
     >
 
     <section
-      class="h-[45rem]"
+      class="sm:h-[45rem] h-120 border flex flex-col justify-center"
     >
       <h3
         class="font-medium text-lg w-full h-24 flex items-center justify-center"
@@ -372,51 +376,70 @@
         class="flex items-center gap-8"
       >
         <aside
-          class="w-1/2 h-[35rem]"
+          class="w-1/2 h-[35rem] border-2 md:block hidden"
         >
           <div
             class="z-10"
           >
+          <!--black circle-->
             <div
-              class="absolute w-1/2 flex justify-center items-center 2xl:w-[45%]
-                     lg:h-[35rem] md:h-[26.25rem] sm:h-[21.875rem] xs:h-[9rem] max-h-[35rem]
-                     "
+              class="absolute flex justify-center items-center z-20
+                     xl:translate-x-[21rem] xl:translate-y-64 translate-x-[16rem] translate-y-48
+                    "
             >
               <div
-                class="absolute bg-black rounded-full w-52 h-52 z-10"
+                class="absolute bg-black rounded-full xl:w-52 xl:h-52 z-10
+                       lg:w-44 lg:h-44 w-32 h-32
+                      "
               ></div>
             </div>
+
+            <!--left-top circle-->
             <div
-              class="absolute w-1/7 flex justify-end items-end h-1/4 2xl:w-1/8 2xl:h-1/10"
+              class="absolute flex justify-end items-end z-20
+                     xl:translate-x-48 xl:translate-y-32 translate-x-36 translate-y-24
+                    "
             >
               <div
-                class="absolute bg-cyan-950 rounded-full w-24 h-24 z-10"
+                class="absolute bg-cyan-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
+
+            <!--left-bottom circle-->
             <div
-              class="absolute w-1/6 flex justify-end items-end h-4/5 2xl:w-[15%] 2xl:h-[32%]"
+              class="absolute z-20 flex justify-end items-end
+                     xl:translate-x-72 xl:translate-y-[30rem] translate-x-64 translate-y-96
+                    "
             >
               <div
-                class="absolute bg-green-950 rounded-full w-24 h-24 z-10 "
+                class="absolute bg-green-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
+
+            <!--right-bottom circle-->
             <div
-              class="absolute w-[42%] flex justify-end items-end h-5/6 2xl:w-[34%] 2xl:h-[34%]"
+              class="absolute flex justify-end items-end z-20
+                     xl:translate-x-[35rem] xl:translate-y-[30rem] translate-x-[29rem] translate-y-84
+                    "
             >
               <div
-                class="absolute bg-red-950 rounded-full w-24 h-24 z-10"
+                class="absolute bg-red-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
+
+            <!--right-top circle-->
             <div
-              class="absolute w-[41%] flex justify-end items-end h-1/4 2xl:w-[32%] 2xl:h-[9%]"
+              class="absolute flex justify-end items-end z-20
+                     xl:translate-x-[31rem] xl:translate-y-36 translate-x-[26rem] translate-y-24
+                    "
             >
               <div
-                class="absolute bg-amber-950 rounded-full w-24 h-24 z-10"
+                class="absolute bg-amber-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
           </div>
           <div
-            class="absolute z-0 left-1/10 translate-y-60 2xl:left-1/6"
+            class="absolute z-0 xl:translate-x-40 xl:translate-y-60 translate-x-32 translate-y-52"
           >
             <app-bg-blur
             />
@@ -429,7 +452,9 @@
           </div>
         </aside>
         <aside
-          class="w-2/5 flex flex-col gap-4 "
+          class="w-full flex flex-col items-center gap-4 text-center
+                 md:w-2/5 md:items-start sm:text-left
+                "
         >
           <h2
             class="font-semibold text-[28px]"
@@ -470,7 +495,7 @@
 
     <img
       ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-      class="absolute rotate-45 -translate-y-16 left-0 2xl:left-32"
+      class="absolute rotate-45 -translate-y-16 sm:block hidden"
     >
 
     <section
@@ -484,67 +509,69 @@
             GUIDE D'INSTALLATION
         </span>
         <h1
-          class="font-bold sm:text-5xl text-4xl w-1/2"
+          class="font-bold sm:text-5xl text-3xl w-1/2"
         >
           Disponible Sur Vos Plateformes
         </h1>
       </div>
 
       <div
-        class="flex flex-col gap-5 p-12 items-center"
+        class="flex flex-col sm:gap-5 gap-2 sm:p-12 p-6 items-center"
       >
         <div
-          class="flex gap-10 items-center"
+          class="flex sm:gap-10 gap-2 items-center"
         >
           <div
-            class="bg-[#F14237] rounded-lg w-1/2 p-5 text-white"
+            class="bg-[#F14237] rounded-lg w-1/2 p-5 sm:gap-y-0 gap-y-2 text-white"
           >
             <h3
-              class="font-semibold text-[28px]"
+              class="sm:font-semibold sm:text-[28px] text-xl font-bold"
             >
-              YansFood Est Disponible Sur L'AppStore
+              YansFood Est Disponible Sur Iphone
             </h3>
             <span
-              class="text-lg"
+              class="sm:text-lg text-sm"
             >
-              Vous pouvez dès à présent télécharger YansFood sur appStore,
+              Vous avez un Iphone? Pas de panique suivez cette <a class="text-semibold" href="#">procedure</a>
             </span>
           </div>
           <div
-            class="w-1/2 p-5 "
+            class="w-1/2 sm:p-5 p-6 sm:gap-y-0 gap-y-2"
           >
             <img
               ngSrc="/Star.svg" alt="star-image" height="38" width="42"
               class="absolute translate-x-12 w-14 -translate-y-16"
             >
             <h3
-              class="font-semibold text-[28px]"
+              class="sm:font-semibold sm:text-[28px] text-xl font-bold"
             >
-              Vous Pouvez Également Y Accéder Via Votre iPhone
+              YansFood Dispo Sans téléchargement
             </h3>
             <span
-              class="text-lg"
+              class="sm:text-lg text-sm"
             >
-              Accéder à YansFood sur votre iPhone depuis la version web, <a class="text-[#F14237]" href="#">cliquez-ici</a> pour la télécharger..
+              Accéder à YansFood sans téléchargement depuis la version web, <a class="text-[#F14237]" href="#">cliquez-ici</a>...
             </span>
           </div>
         </div>
 
         <div
-          class="bg-[#F14237] rounded-lg w-1/2 p-5 text-white"
+          class="bg-[#F14237] rounded-lg w-1/2 p-5 sm:gap-y-0 gap-y-2 text-white"
         >
           <h3
-            class="font-semibold text-[28px]"
+            class="sm:font-semibold sm:text-[28px] text-xl font-bold"
           >
             Prêt À Commenecer?
           </h3>
           <span
-            class="text-lg"
+            class="sm:text-lg text-sm"
           >
             Télécharger l’application dès à présent sur playStore
           </span>
           <button
-            class="flex gap-1 items-center bg-white p-3 rounded-sm text-black mt-3"
+            class="flex gap-1 items-center bg-white rounded-sm text-black mt-3
+                    sm:p-3 p-1.5 sm:text-base text-sm
+                  "
           >
             Download App
             <lucide-angular
@@ -561,40 +588,48 @@
       class="flex flex-col"
     >
       <h1
-        class="text-5xl font-bold w-1/3 "
+        class="w-full text-3xl font-bold
+               sm:text-5xl sm:w-1/3
+              "
       >
         Installation Sur Un iPhone
       </h1>
 
 
       <div
-        class="h-[58rem]"
+        class="sm:h-[58rem] sm:block w-full flex flex-wrap h-200 justify-center"
       >
         <img
           ngSrc="/Star.svg" alt="star-image" height="38" width="42"
           class="absolute rotate-45 translate-y-96 translate-x-0"
         >
         <div
-          class="absolute z-0 rotate-45 translate-x-20 translate-y-16"
+          class="absolute z-0 rotate-45 translate-x-20 translate-y-16 "
         >
-          <app-bg-blur
-          />
+          <app-bg-blur/>
         </div>
+
         <div
-          class="absolute -translate-x-2 z-10"
+          class="relative  z-10 translate-none w-1/2 flex flex-col gap-5
+                 sm:absolute sm:-translate-x-2 sm:w-auto sm:block"
         >
            <div
-             class="font-semibold text-[28px] translate-y-7 ml-32"
+             class="font-semibold  translate-y-7
+                    sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
            >
             Étape 1
           </div>
           <img ngSrc="/home_screen.svg" alt="home screen" width="450" height="705">
         </div>
         <div
-          class="absolute translate-x-[19rem] top-[265rem]"
+          class="relative translate-none top-auto w-1/2 flex flex-col gap-5
+                 sm:absolute sm:translate-x-[19rem] sm:w-auto sm:block sm:top-[265rem]"
         >
           <div
-            class="font-semibold translate-y-7 text-[28px] ml-32"
+            class="font-semibold translate-y-7
+                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
           >
             Étape 2
           </div>
@@ -603,10 +638,13 @@
           >
         </div>
         <div
-          class="absolute translate-x-[37rem] top-[271rem] "
+          class="relative flex flex-col gap-5 translate-none top-auto w-1/2
+                 sm:absolute sm:translate-x-[37rem] sm:top-[271rem] sm:block"
         >
           <div
-            class="font-semibold text-[28px] ml-32 translate-y-7"
+            class="font-semibold translate-y-7
+                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
           >
             Étape 3
           </div>
@@ -615,10 +653,13 @@
           >
         </div>
         <div
-          class="absolute translate-x-[55rem] top-[277rem]"
+          class="relative translate-none top-auto w-1/2 flex flex-col gap-5
+                 sm:absolute sm:translate-x-[55rem] sm:w-auto sm:top-[277rem] sm:block"
         >
           <div
-            class="font-semibold text-[28px] ml-32 translate-y-7"
+            class="font-semibold translate-y-7
+                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
           >
             Étape 4
           </div>
@@ -628,7 +669,7 @@
           >
           <img
             ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-            class="absolute w-14 -translate-y-[50rem] right-24 z-10"
+            class="absolute w-14 z-10 -translate-y-[50rem]  xl:translate-x-72"
           >
         </div>
 
@@ -641,7 +682,8 @@
     class="flex flex-col gap-4"
   >
     <div
-      class="flex pr-2 pt-8 pl-6 pb-12 gap-15"
+      class="flex pr-2 pt-8 pl-6 pb-12 sm:gap-15
+             sm:flex-nowrap flex-wrap gap-8"
     >
       <section
 
@@ -722,7 +764,7 @@
         <h1
           class="text-[32px] font-medium"
         >
-          Produits
+          Contact
         </h1>
 
         <span
@@ -749,7 +791,7 @@
           </button>
         </div>
         <div
-          class="absolute z-0 right-1/4 translate-y-16"
+          class="absolute z-0  translate-y-24"
         >
           <app-bg-blur
           />
