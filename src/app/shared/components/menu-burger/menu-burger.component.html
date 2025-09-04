@@ -1,21 +1,22 @@
 <nav
-  class="md:hidden flex justify-between w-full items-center"
+  class="md:hidden flex justify-between w-screen items-center pr-6 pl-4 pt-3"
 >
-  <img ngSrc="/logo.svg" alt="yansFood-logo" height="56" width="56">
+  <img class="" ngSrc="/logo.svg" alt="yansFood-logo" height="56" width="56">
   <div
   >
     <lucide-angular
       [img]="menu"
       class="hover:cursor-pointer"
       (click)="toggleMenu()"
+      [style.display]= "menuDisplay? 'none' : 'block '"
     ></lucide-angular>
     <div
-      class="bg-red-300 absolute h-full flex-col gap-8 w-44 right-0 top-0 z-10 items-center
+      class="bg-gradient-to-t from-[#FF555550] via-[#ffffff80] to-[#FF555550] backdrop-blur-md fixed h-screen flex-col gap-8 -translate-x-26.5 -translate-y-12 pt-10  border z-10 items-center
                  sm:hidden xs:flex"
       [style.display]= "menuDisplay? 'flex' : 'none'"
     >
       <div
-        class="w-full flex justify-end h-14 items-end p-3 hover:cursor-pointer"
+        class="w-full flex justify-end hover:cursor-pointer"
       >
         <lucide-angular
           [img]="close"
@@ -24,13 +25,10 @@
       </div>
 
       <div
-        class="flex flex-col gap-4"
+        class="flex flex-col gap-4 pr-6 pl-6"
       >
         @for (button of navbarButtons; track $index) {
-          <app-primary-button
-            [name]="button.label"
-            [sectionId]="button.id"
-            [buttonId]="$index"/>
+          <app-primary-button [name]="button.label" [sectionId]="button.id" [buttonId]="$index"/>
         }
         <app-secondary-button name="Télécharger"/>
       </div>

@@ -1,16 +1,12 @@
 <div
-  class="flex flex-col gap-2"
+  class="flex flex-col gap-2 "
 >
-  <div
-    class="sm:hidden xs:block bg-amber-100 absolute h-full border w-full z-0"
-    [style.display]="menuDisplay? 'flex' : 'none' "
-  >
-  </div>
+
   <header
-    [ngClass]="{ 'sm:mb-32 mb-12  bg-gradient-to-r from-[#FF555550] via-[#ffffff80] to-[#FF555550] backdrop-blur-md shadow-sm': scrolled, 'bg-transparent ': !scrolled
+    [ngClass]="{ 'sm:mb-32 mb-12 bg-white/80 sm:bg-gradient-to-r sm:from-[#FF555550] sm:via-[#ffffff80] sm:to-[#FF555550] backdrop-blur-md shadow-sm': scrolled, 'bg-transparent ': !scrolled
     }"
-    class="fixed w-full max-w-[1280px] z-50 flex items-center
-           lg:pl-12 lg:pr-12  xs:h-28 xs:pr-6 xs:pl-6"
+    class="fixed sm:w-full sm:max-w-[1280px] z-50 flex sm:items-center
+           lg:pl-12 lg:pr-12 sm:h-auto h-20 w-auto"
   >
 
     <div
@@ -23,7 +19,7 @@
 
 
     <div
-      class="w-full border md:hidden"
+      class="w-screen md:hidden"
     >
       <app-menu-burger
         [navbarButtons]="navbarButtons"
@@ -46,11 +42,11 @@
 
   <img
     ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-       class="rotate-45"
+       class="rotate-45 sm:block hidden"
   >
 
   <main
-    class="p-2 pl-4 sm:block flex flex-col gap-10 pt-28 md:pt-32"
+    class="p-2 pl-4 sm:block flex flex-col gap-10 pt-28 md:pt-32 "
     id="accueil"
 
   >
