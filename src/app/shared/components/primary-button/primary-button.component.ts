@@ -16,7 +16,7 @@ export class PrimaryButtonComponent {
   @Input() buttonId !: number;
   @Input() sectionId!: string;
 
-  currentColor: string = '#F14237';
+  @Input() currentColor: string = '#F14237';
 
 
 
