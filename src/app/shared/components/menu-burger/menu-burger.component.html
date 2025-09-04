@@ -27,7 +27,10 @@
         class="flex flex-col gap-4"
       >
         @for (button of navbarButtons; track $index) {
-          <app-primary-button [name]="button" [buttonId]="$index"/>
+          <app-primary-button
+            [name]="button.label"
+            [sectionId]="button.id"
+            [buttonId]="$index"/>
         }
         <app-secondary-button name="Télécharger"/>
       </div>

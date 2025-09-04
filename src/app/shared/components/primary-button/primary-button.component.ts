@@ -14,6 +14,7 @@ import {SelectedButtonService} from '../../../services/selected-button.service';
 export class PrimaryButtonComponent {
   @Input() name : string = 'Présentation';
   @Input() buttonId !: number;
+  @Input() sectionId!: string;
 
   currentColor: string = '#F14237';
 
@@ -40,5 +41,12 @@ export class PrimaryButtonComponent {
       this.selectedButtonService.selectButton(this.buttonId);
       this.currentColor = '#F14237';
     }
+
+    const el = document.getElementById(this.sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
+
+
 }

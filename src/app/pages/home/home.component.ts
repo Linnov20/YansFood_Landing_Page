@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import { Component, HostListener } from '@angular/core';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
 import {
@@ -18,6 +18,7 @@ import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-ic
 import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-icon/title-xl-with-icon.component';
 import {EllipseComponent} from '../../shared/components/ellipse/ellipse.component';
 import {BgBlurComponent} from '../../shared/components/bg-blur/bg-blur.component';
+import {ScrollSpyDirective} from '../../shared/directives/scroll-spy.directive';
 
 
 @Component({
@@ -35,18 +36,28 @@ import {BgBlurComponent} from '../../shared/components/bg-blur/bg-blur.component
     TitleXlWithIconComponent,
     EllipseComponent,
     BgBlurComponent,
+    NgClass,
+    ScrollSpyDirective,
   ],
   templateUrl: './home.component.html',
   standalone: true,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  navbarButtons : string[] = [
-    'Accueil',
-    'Présentation',
-    'Partenaire',
-    'Guide'
+  navbarButtons = [
+    { label: 'Accueil', id: 'accueil' },
+    { label: 'Présentation', id: 'presentation' },
+    { label: 'Partenaire', id: 'partenaire' },
+    { label: 'Guide', id: 'guide' }
   ];
+
+  scrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.scrollY > 80; // active à partir de 50px de scroll
+  }
+
 
   profilePath : string = '/profile-screen.svg'
   announcePath : string = '/announces-screen.svg'

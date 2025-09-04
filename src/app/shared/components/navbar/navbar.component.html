@@ -10,7 +10,11 @@
       class="flex lg:gap-4 sm:gap-3"
     >
       @for (button of navbarButtons; track $index) {
-        <app-primary-button [name]="button" [buttonId]="$index"/>
+        <app-primary-button
+          [name]="button.label"
+          [sectionId]="button.id"
+          [buttonId]="$index"
+        />
       }
     </div>
   </div>

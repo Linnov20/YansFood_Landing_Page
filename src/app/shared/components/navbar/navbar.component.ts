@@ -15,6 +15,9 @@ import {SecondaryButtonComponent} from "../secondary-button/secondary-button.com
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  @Input() navbarButtons: string[] = [];
+  @Input() navbarButtons: {label: string, id: string}[] = [{
+    label: '',
+    id: ''
+  }];
 
 }

@@ -7,27 +7,20 @@
   >
   </div>
   <header
-    class="flex items-center w-full z-10
-           lg:pl-12 lg:pr-12 lg:h-1/4 xs:h-28 xs:pr-6 xs:pl-6"
+    [ngClass]="{ 'sm:mb-32 mb-12  bg-gradient-to-r from-[#FF555550] via-[#ffffff80] to-[#FF555550] backdrop-blur-md shadow-sm': scrolled, 'bg-transparent ': !scrolled
+    }"
+    class="fixed w-full max-w-[1280px] z-50 flex items-center
+           lg:pl-12 lg:pr-12  xs:h-28 xs:pr-6 xs:pl-6"
   >
 
     <div
-      class="w-full md:block hidden"
+      class="w-full md:block hidden z-20"
     >
       <app-navbar
         [navbarButtons]="navbarButtons"
       />
     </div>
 
-    <div
-      class="flex justify-end transform absolute h-40 items-end w-full max-w-[1280px] m-auto pr-12"
-
-    >
-      <img ngSrc="/Star.svg" alt="star-image" height="58" width="62"
-           class="lg:w-14 lg:h-12 xl:w-16 xl:h-14 md:w-12 md:h-10
-                  w-10 h-8"
-      >
-    </div>
 
     <div
       class="w-full border md:hidden"
@@ -41,6 +34,15 @@
 
   </header>
 
+  <div
+    class="flex justify-end transform absolute h-40 items-end w-full max-w-[1280px] m-auto pr-12"
+
+  >
+    <img ngSrc="/Star.svg" alt="star-image" height="58" width="62"
+         class="lg:w-14 lg:h-12 xl:w-16 xl:h-14 md:w-12 md:h-10
+                  w-10 h-8"
+    >
+  </div>
 
   <img
     ngSrc="/Star.svg" alt="star-image" height="38" width="42"
@@ -48,10 +50,13 @@
   >
 
   <main
-    class="p-2 pl-4 sm:block flex flex-col gap-10"
+    class="p-2 pl-4 sm:block flex flex-col gap-10 pt-28 md:pt-32"
+    id="accueil"
+
   >
     <section
-      class="flex "
+      class="flex"
+      appScrollSpy [sectionId]="'accueil'" [buttonId]="0"
     >
       <aside
         class=" w-1/2 flex flex-col gap-6"
@@ -221,7 +226,9 @@
     </section>
 
     <section
-      class="flex "
+      class="flex"
+      id="presentation"
+      appScrollSpy [sectionId]="'presentation'" [buttonId]="1"
     >
       <aside
         class="sm:w-1/2 flex flex-col gap-7 justify-center w-full"
@@ -365,7 +372,9 @@
     >
 
     <section
-      class="sm:h-[45rem] h-120 border flex flex-col justify-center"
+      class="sm:h-[45rem] h-120 flex flex-col justify-center"
+      id="partenaire"
+      appScrollSpy [sectionId]="'partenaire'" [buttonId]="2"
     >
       <h3
         class="font-medium text-lg w-full h-24 flex items-center justify-center"
@@ -376,7 +385,7 @@
         class="flex items-center gap-8"
       >
         <aside
-          class="w-1/2 h-[35rem] border-2 md:block hidden"
+          class="w-1/2 h-[35rem] md:block hidden"
         >
           <div
             class="z-10"
@@ -499,6 +508,8 @@
     >
 
     <section
+      id="guide"
+      appScrollSpy [sectionId]="'guide'" [buttonId]="3"
     >
       <div
         class=""
@@ -522,7 +533,7 @@
           class="flex sm:gap-10 gap-2 items-center"
         >
           <div
-            class="bg-[#F14237] rounded-lg w-1/2 p-5 sm:gap-y-0 gap-y-2 text-white"
+            class="bg-[#F14237] rounded-lg w-1/2 p-5 text-white"
           >
             <h3
               class="sm:font-semibold sm:text-[28px] text-xl font-bold"
@@ -532,7 +543,7 @@
             <span
               class="sm:text-lg text-sm"
             >
-              Vous avez un Iphone? Pas de panique suivez cette <a class="text-semibold" href="#">procedure</a>
+              Vous avez un Iphone? Pas de panique suivez cette <a class="font-semibold" href="#">procedure</a> <span class="hidden sm:block"> pour installer l'application. </span>
             </span>
           </div>
           <div
@@ -561,7 +572,7 @@
           <h3
             class="sm:font-semibold sm:text-[28px] text-xl font-bold"
           >
-            Prêt À Commenecer?
+            Prêt À Commenecer ?
           </h3>
           <span
             class="sm:text-lg text-sm"
