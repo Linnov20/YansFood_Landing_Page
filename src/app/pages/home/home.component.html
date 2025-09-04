@@ -1,36 +1,25 @@
 <div
-  class="flex flex-col gap-2 h-screen"
+  class="flex flex-col gap-2 "
 >
-  <div
-    class="sm:hidden xs:block bg-amber-100 absolute h-full border w-full z-0"
-    [style.display]="menuDisplay? 'flex' : 'none' "
-  >
-  </div>
+
   <header
-    class="flex items-center w-full
-           lg:pl-12 lg:pr-12 lg:h-1/4 xs:h-28 xs:pr-6 xs:pl-6"
+    [ngClass]="{ 'sm:mb-32 mb-12 bg-white/80 sm:bg-gradient-to-r sm:from-[#FF555550] sm:via-[#ffffff80] sm:to-[#FF555550] backdrop-blur-md shadow-sm': scrolled, 'bg-transparent ': !scrolled
+    }"
+    class="fixed sm:w-full sm:max-w-[1280px] z-50 flex sm:items-center
+           lg:pl-12 lg:pr-12 sm:h-auto h-20 w-auto"
   >
 
     <div
-      class="w-full md:block hidden"
+      class="w-full md:block hidden z-20"
     >
       <app-navbar
         [navbarButtons]="navbarButtons"
       />
     </div>
 
-    <div
-      class="flex justify-end transform absolute right-0
-             lg:left-96 xs:top-20 lg:top-16"
-    >
-      <img ngSrc="/Star.svg" alt="star-image" height="58" width="62"
-           class="lg:w-14 lg:h-12 xl:w-16 xl:h-14 md:w-12 md:h-10
-                  w-10 h-8"
-      >
-    </div>
 
     <div
-      class="w-full border md:hidden"
+      class="w-screen md:hidden"
     >
       <app-menu-burger
         [navbarButtons]="navbarButtons"
@@ -41,17 +30,29 @@
 
   </header>
 
+  <div
+    class="flex justify-end transform absolute h-40 items-end w-full max-w-[1280px] m-auto pr-12"
 
-  <img ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-       class="rotate-45"
+  >
+    <img ngSrc="/Star.svg" alt="star-image" height="58" width="62"
+         class="lg:w-14 lg:h-12 xl:w-16 xl:h-14 md:w-12 md:h-10
+                  w-10 h-8"
+    >
+  </div>
+
+  <img
+    ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+       class="rotate-45 sm:block hidden"
   >
 
   <main
-    class="border border-red-500 p-2"
-  >
+    class="p-2 pl-4 sm:block flex flex-col gap-10 pt-28 md:pt-32 "
+    id="accueil"
 
+  >
     <section
-      class="flex border border-teal-600"
+      class="flex"
+      appScrollSpy [sectionId]="'accueil'" [buttonId]="0"
     >
       <aside
         class=" w-1/2 flex flex-col gap-6"
@@ -59,18 +60,23 @@
         <div
           class="w-[13rem] lg:w-[38.625rem] md:w-[26rem] sm:w-[21rem] flex flex-col gap-4"
         >
-          <h1
-            class="font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg"
+          <div
+            class="absolute z-0 lg:translate-x-40 lg:-translate-y-20 md:translate-x-32 md:-translate-y-12"
           >
-            Ils commandent encore sur WhatsApp. Toi, tu vas faire mieux.
+            <app-bg-blur/>
+          </div>
+          <h1
+            class="font-bold lg:text-5xl md:text-3xl sm:text-2xl text-lg z-10"
+          >
+            Ils Commandent Encore Sur WhatsApp. Toi,Tu Vas Faire Mieux.
           </h1>
 
           <span
-            class="font-medium text-xs lg:text-lg text-gray-600 md:text-base sm:text-sm "
+            class="font-medium text-xs z-10 lg:text-lg text-gray-600 md:text-base sm:text-sm "
           >
-          Découvrez YansFood, Notre application de Commande et Livraison de Repas.
-          Fini les Files D’attente… Bientôt, Tu Commandes Comme Un Boss!
-        </span>
+            Découvrez YansFood, Notre application de Commande et Livraison de Repas.
+            Fini les Files D’attente… Bientôt, Tu Commandes Comme Un Boss!
+         </span>
         </div>
 
         <div
@@ -97,12 +103,17 @@
         </div>
       </aside>
 
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute lg:translate-y-[35rem] translate-y-[38rem] sm:block hidden rotate-45 "
+      >
+
       <aside
         class="w-1/2 flex justify-center"
       >
         <div
-          class="absolute m-auto xl:-translate-y-[9rem]
-                 xl:-translate-x-16 lg:-translate-x-8 md:-translate-x-4 md:-translate-[7rem]
+          class="absolute z-10 m-auto xl:-translate-y-[9rem]
+                 xl:translate-x-2 lg:-translate-x-8 md:-translate-x-4 md:-translate-[7rem]
                  sm:-translate-x-8 sm:-translate-y-[5rem]
                  -translate-y-[2rem]
                 "
@@ -112,32 +123,52 @@
             ngSrc="/triple-phone.svg" alt="phone-image" width="721" height="897"
           >
         </div>
+        <div
+          class="absolute z-0 lg:translate-y-60 rotate-45 md:translate-y-44 sm:translate-y-28 translate-y-12"
+        >
+          <app-bg-blur
+            [redColorUp]=false
+          />
+        </div>
       </aside>
+
+
     </section>
 
     <section
-      class="border border-pink-500 flex sm:flex-row flex-col"
+      class="flex sm:flex-row flex-col"
     >
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute rotate-45 z-0 sm:block hidden"
+      >
       <aside
         class="w-1/2 sm:h-[40rem] sm:flex hidden"
       >
         <app-card-with-phone
-          class="lg:relative lg:left-auto lg:bottom-auto sm:absolute -left-8 -bottom-[55rem]"
+          class="z-10 lg:relative lg:left-auto lg:bottom-auto sm:absolute -left-8 -bottom-[55rem]"
           [imgPath]="profilePath"
         />
+        <div
+          class="absolute z-0"
+        >
+          <app-bg-blur
+            [redColorUp]=false
+          />
+        </div>
       </aside>
 
       <aside
         class="sm:w-1/2 flex flex-col gap-7 w-full"
       >
         <div>
-            <span
+          <span
               class="font-medium text-lg text-[#FF5555]"
             >
               A PROPOS
-            </span>
+          </span>
           <div
-            class="flex items-center sm:block"
+            class="flex sm:block z-10"
           >
             <h1
               class="font-bold sm:text-5xl text-4xl"
@@ -154,10 +185,22 @@
             </aside>
           </div>
         </div>
+        <div
+          class="absolute z-0 border -rotate-90 translate-x-72 translate-y-[30rem]
+                 2xl:translate-y-60  2xl:translate-x-[26rem] 2xl:rotate-none xl:translate-y-96 xl:translate-x-[24rem]
+                "
+        >
+          <div
+            class="absolute w-36 h-[26rem] bg-white z-10  xl:translate-x-[13.5rem] -translate-y-24 hidden 2xl:block"
+          >
+          </div>
+          <app-bg-blur
 
+          />
+        </div>
         @for (item of about; track $index){
           <div
-            class="flex flex-col gap-1.5"
+            class="flex flex-col gap-1.5 z-10"
           >
             <div
             >
@@ -179,7 +222,9 @@
     </section>
 
     <section
-      class="flex "
+      class="flex"
+      id="presentation"
+      appScrollSpy [sectionId]="'presentation'" [buttonId]="1"
     >
       <aside
         class="sm:w-1/2 flex flex-col gap-7 justify-center w-full"
@@ -194,7 +239,7 @@
             class="flex items-center sm:block"
           >
             <h1
-              class="font-bold sm:text-5xl text-4xl"
+              class="font-bold sm:text-5xl text-3xl"
             >
               Bientôt, Tu Ne Verras Plus Les Restaurants Comme Avant.
             </h1>
@@ -235,10 +280,25 @@
         class="w-1/2 sm:h-[40rem] sm:flex justify-center hidden"
       >
         <app-card-with-phone
-          class="lg:relative lg:left-auto lg:bottom-auto absolute right-32 -bottom-[102rem]"
+          class="lg:relative lg:left-auto lg:bottom-auto absolute right-32 -bottom-[102rem] z-10"
           [imgPath]="foodDescPath"
         />
+        <div
+          class="absolute z-0 -translate-x-52 translate-y-48 rotate-6 "
+        >
+          <app-bg-blur
+          />
+        </div>
       </aside>
+      <div
+        class="absolute w-full max-w-[1280px] pr-4 h-16 flex justify-end"
+      >
+        <img
+          ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+          class="absolute w-14"
+        >
+      </div>
+
     </section>
 
     <section
@@ -248,13 +308,23 @@
         class="w-1/2 h-[40rem] sm:flex hidden"
       >
         <app-card-with-phone
-          class="lg:relative lg:left-auto lg:bottom-auto absolute -left-10"
+          class="lg:relative lg:left-auto lg:bottom-auto absolute -left-10 z-10"
           [imgPath]="announcePath"
         />
+        <div
+          class="absolute z-0 md:translate-x-48 md:translate-y-40 translate-x-36 rotate-12 "
+        >
+          <app-bg-blur
+            [redColorUp]=false
+          />
+        </div>
       </aside>
-
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute left-1/2 right-1/2 rotate-45"
+      >
       <aside
-        class="w-full flex flex-col gap-5 p-0 h-auto
+        class="w-full flex flex-col gap-5 p-0 h-auto z-20
                sm:justify-end sm:w-1/2 justify-center sm:h-96 sm:pb-12
               "
       >
@@ -292,7 +362,16 @@
       </aside>
     </section>
 
-    <section>
+    <img
+      ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+      class="absolute w-14 sm:block hidden"
+    >
+
+    <section
+      class="sm:h-[45rem] h-120 flex flex-col justify-center"
+      id="partenaire"
+      appScrollSpy [sectionId]="'partenaire'" [buttonId]="2"
+    >
       <h3
         class="font-medium text-lg w-full h-24 flex items-center justify-center"
       >
@@ -302,52 +381,85 @@
         class="flex items-center gap-8"
       >
         <aside
-          class="w-1/2"
+          class="w-1/2 h-[35rem] md:block hidden"
         >
-          <div>
+          <div
+            class="z-10"
+          >
+          <!--black circle-->
             <div
-              class="absolute w-1/2 flex justify-center items-center lg:h-[35rem]"
+              class="absolute flex justify-center items-center z-20
+                     xl:translate-x-[21rem] xl:translate-y-64 translate-x-[16rem] translate-y-48
+                    "
             >
               <div
-                class="absolute bg-black rounded-full w-52 h-52"
+                class="absolute bg-black rounded-full xl:w-52 xl:h-52 z-10
+                       lg:w-44 lg:h-44 w-32 h-32
+                      "
               ></div>
             </div>
+
+            <!--left-top circle-->
             <div
-              class="absolute w-1/7 flex justify-end items-end lg:h-1/4"
+              class="absolute flex justify-end items-end z-20
+                     xl:translate-x-48 xl:translate-y-32 translate-x-36 translate-y-24
+                    "
             >
               <div
-                class="absolute bg-cyan-950 rounded-full w-24 h-24"
+                class="absolute bg-cyan-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
+
+            <!--left-bottom circle-->
             <div
-              class="absolute w-1/6 flex justify-end items-end lg:h-4/5"
+              class="absolute z-20 flex justify-end items-end
+                     xl:translate-x-72 xl:translate-y-[30rem] translate-x-64 translate-y-96
+                    "
             >
               <div
-                class="absolute bg-green-950 rounded-full w-24 h-24"
+                class="absolute bg-green-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
+
+            <!--right-bottom circle-->
             <div
-              class="absolute w-[41%] flex justify-end items-end lg:h-4/5"
+              class="absolute flex justify-end items-end z-20
+                     xl:translate-x-[35rem] xl:translate-y-[30rem] translate-x-[29rem] translate-y-84
+                    "
             >
               <div
-                class="absolute bg-red-950 rounded-full w-24 h-24"
+                class="absolute bg-red-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
+
+            <!--right-top circle-->
             <div
-              class="absolute w-[41%] flex justify-end items-end lg:h-1/4"
+              class="absolute flex justify-end items-end z-20
+                     xl:translate-x-[31rem] xl:translate-y-36 translate-x-[26rem] translate-y-24
+                    "
             >
               <div
-                class="absolute bg-amber-950 rounded-full w-24 h-24"
+                class="absolute bg-amber-950 rounded-full lg:w-24 lg:h-24 z-10 md:w-18 md:h-18 sm:w-12 sm:h-12"
               ></div>
             </div>
           </div>
+          <div
+            class="absolute z-0 xl:translate-x-40 xl:translate-y-60 translate-x-32 translate-y-52"
+          >
+            <app-bg-blur
+            />
+          </div>
 
-          <div>
+          <div
+            class="z-0"
+          >
             <app-ellipse/>
           </div>
         </aside>
         <aside
-          class="w-2/5 flex flex-col gap-4 "
+          class="w-full flex flex-col items-center gap-4 text-center
+                 md:w-2/5 md:items-start sm:text-left
+                "
         >
           <h2
             class="font-semibold text-[28px]"
@@ -385,11 +497,334 @@
         </aside>
       </div>
     </section>
+
+    <img
+      ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+      class="absolute rotate-45 -translate-y-16 sm:block hidden"
+    >
+
+    <section
+      id="guide"
+      appScrollSpy [sectionId]="'guide'" [buttonId]="3"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="font-medium text-lg text-[#FF5555]"
+        >
+            GUIDE D'INSTALLATION
+        </span>
+        <h1
+          class="font-bold sm:text-5xl text-3xl w-1/2"
+        >
+          Disponible Sur Vos Plateformes
+        </h1>
+      </div>
+
+      <div
+        class="flex flex-col sm:gap-5 gap-2 sm:p-12 p-6 items-center"
+      >
+        <div
+          class="flex sm:gap-10 gap-2 items-center"
+        >
+          <div
+            class="bg-[#F14237] rounded-lg w-1/2 p-5 text-white"
+          >
+            <h3
+              class="sm:font-semibold sm:text-[28px] text-xl font-bold"
+            >
+              YansFood Est Disponible Sur Iphone
+            </h3>
+            <span
+              class="sm:text-lg text-sm"
+            >
+              Vous avez un Iphone? Pas de panique suivez cette <app-primary-button name="procedure" currentColor="#ffffff" sectionId="iphone_installation"/>* <span class="hidden sm:block"> pour installer l'application. </span>
+            </span>
+          </div>
+          <div
+            class="w-1/2 sm:p-5 p-6 sm:gap-y-0 gap-y-2"
+          >
+            <img
+              ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+              class="absolute translate-x-12 w-14 -translate-y-16"
+            >
+            <h3
+              class="sm:font-semibold sm:text-[28px] text-xl font-bold"
+            >
+              YansFood Dispo Sans téléchargement
+            </h3>
+            <span
+              class="sm:text-lg text-sm"
+            >
+              Accéder à YansFood sans téléchargement depuis la version web, <a class="text-[#F14237]" href="#">cliquez-ici</a>...
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#F14237] rounded-lg w-1/2 p-5 sm:gap-y-0 gap-y-2 text-white"
+        >
+          <h3
+            class="sm:font-semibold sm:text-[28px] text-xl font-bold"
+          >
+            Prêt À Commenecer ?
+          </h3>
+          <span
+            class="sm:text-lg text-sm"
+          >
+            Télécharger l’application dès à présent sur playStore
+          </span>
+          <button
+            class="flex gap-1 items-center bg-white rounded-sm text-black mt-3
+                    sm:p-3 p-1.5 sm:text-base text-sm
+                  "
+          >
+            Download App
+            <lucide-angular
+              [name] = play_store
+              strokeWidth="1.5"
+            />
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <section
+      class="flex flex-col"
+      id="iphone_installation"
+    >
+      <h1
+        class="w-full text-3xl font-bold
+               sm:text-5xl sm:w-1/3
+              "
+
+      >
+        Installation Sur Un iPhone
+      </h1>
+
+
+      <div
+        class="sm:h-[58rem] sm:block w-full flex flex-wrap h-200 justify-center"
+      >
+        <img
+          ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+          class="absolute rotate-45 translate-y-96 translate-x-0"
+        >
+        <div
+          class="absolute z-0 rotate-45 translate-x-20 translate-y-16 "
+        >
+          <app-bg-blur/>
+        </div>
+
+        <div
+          class="relative  z-10 translate-none w-1/2 flex flex-col gap-5
+                 sm:absolute sm:-translate-x-2 sm:w-auto sm:block"
+        >
+           <div
+             class="font-semibold  translate-y-7
+                    sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
+           >
+            Étape 1
+          </div>
+          <img ngSrc="/home_screen.svg" alt="home screen" width="450" height="705">
+        </div>
+        <div
+          class="relative translate-none top-auto w-1/2 flex flex-col gap-5
+                 sm:absolute sm:translate-x-[19rem] sm:w-auto sm:block sm:top-[265rem]"
+        >
+          <div
+            class="font-semibold translate-y-7
+                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
+          >
+            Étape 2
+          </div>
+          <img
+            ngSrc="/browser_setting_screen.svg" alt="home screen" width="450" height="705"
+          >
+        </div>
+        <div
+          class="relative flex flex-col gap-5 translate-none top-auto w-1/2
+                 sm:absolute sm:translate-x-[37rem] sm:top-[271rem] sm:block"
+        >
+          <div
+            class="font-semibold translate-y-7
+                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
+          >
+            Étape 3
+          </div>
+          <img
+            ngSrc="/adding_app_screen.svg" alt="home screen" width="450" height="705"
+          >
+        </div>
+        <div
+          class="relative translate-none top-auto w-1/2 flex flex-col gap-5
+                 sm:absolute sm:translate-x-[55rem] sm:w-auto sm:top-[277rem] sm:block"
+        >
+          <div
+            class="font-semibold translate-y-7
+                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   "
+          >
+            Étape 4
+          </div>
+          <img
+            class="z-0"
+            ngSrc="/phone_screen.svg" alt="home screen" width="450" height="705"
+          >
+          <img
+            ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+            class="absolute w-14 z-10 -translate-y-[50rem]  xl:translate-x-72"
+          >
+        </div>
+
+      </div>
+
+    </section>
   </main>
 
   <footer
-    class="border border-green-500 h-1/4"
+    class="flex flex-col gap-4"
   >
+    <div
+      class="flex pr-2 pt-8 pl-6 pb-12 sm:gap-15
+             sm:flex-nowrap flex-wrap gap-8"
+    >
+      <section
+
+      >
+        <img class="m-auto" ngSrc="/logo.svg" alt="yansFood-logo" height="96" width="96">
+        @for(item of contacts; track $index){
+          <div
+            class="flex gap-2 items-center h-9"
+          >
+            <lucide-angular
+              [name]=item.icon
+              color="#F14237"
+            ></lucide-angular>
+            <span
+              class="font-medium"
+            > {{ item.text }} </span>
+          </div>
+        }
+      </section>
+
+      <section
+        class="flex flex-col gap-3"
+      >
+        <h1
+          class="text-[32px] font-medium"
+        >
+          Liens
+        </h1>
+        @for (item of links; track $index) {
+          <a
+            class="font-medium"
+            href="#"
+          >
+            {{ item }}
+          </a>
+        }
+      </section>
+
+      <section
+        class="flex flex-col gap-3"
+      >
+        <h1
+          class="text-[32px] font-medium"
+        >
+          Legal
+        </h1>
+        @for (item of legal; track $index) {
+          <a
+            class="font-medium"
+            href="#"
+          >
+            {{ item }}
+          </a>
+        }
+      </section>
+
+      <section
+        class="flex flex-col gap-3"
+      >
+        <h1
+          class="text-[32px] font-medium"
+        >
+          Produits
+        </h1>
+        @for (item of produit; track $index) {
+          <a
+            class="font-medium"
+            href="#"
+          >
+            {{ item }}
+          </a>
+        }
+      </section>
+
+      <section
+        class="flex flex-col gap-3"
+      >
+        <h1
+          class="text-[32px] font-medium"
+        >
+          Contact
+        </h1>
+
+        <span
+          class="font-medium z-10"
+        >
+         Rester À Jour
+       </span>
+
+        <div
+          class="flex gap-3 bg-white drop-shadow p-2 rounded-sm z-10"
+        >
+          <img
+            ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+            class="absolute w-14 -translate-y-32 -right-1/10 z-10"
+          >
+          <input
+            class="focus:outline-none p-1 w-1/2"
+            type="text" placeholder="Your Email"
+          >
+          <button
+            class="p-4 w-1/2 bg-black text-white font-medium rounded-sm hover:cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </div>
+        <div
+          class="absolute z-0  translate-y-24"
+        >
+          <app-bg-blur
+          />
+        </div>
+      </section>
+    </div>
+
+    <section
+      class="w-full flex flex-col items-center h-28 z-10"
+    >
+      <img
+        ngSrc="/Star.svg" alt="star-image" height="38" width="42"
+        class="absolute w-14 -translate-x-[38rem] -translate-y-16"
+      >
+      <div
+        class="h-0.5 w-full bg-gradient-to-r from-[#16161600] via-[#696969] to-[#16161600]"
+      ></div>
+      <a
+        href="PRIVACY%20POLICY.pdf"
+        class="font-medium m-auto hover:text-[#FF5555]"
+      >
+        Copyright 2025 App.YansFood.Com All Rights Reserved
+      </a>
+    </section>
 
   </footer>
 </div>

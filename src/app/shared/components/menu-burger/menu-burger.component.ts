@@ -18,7 +18,10 @@ import {SecondaryButtonComponent} from '../secondary-button/secondary-button.com
 })
 export class MenuBurgerComponent {
   @Input() toggleMenu : Function = ()=>{}
-  @Input() navbarButtons: string[] = [];
+  @Input() navbarButtons: {label: string, id: string}[] = [{
+    label: '',
+    id: ''
+  }];
   @Input() menuDisplay !: boolean
 
   protected readonly close = X;

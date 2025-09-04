@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import { Component, HostListener } from '@angular/core';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
 import {
   CirclePlay,
-  LucideAngularModule,
-  PartyPopper,
+  LucideAngularModule, Mail,
+  PartyPopper, Phone, Play,
   Sparkle,
   TruckElectric,
   UtensilsCrossed
@@ -17,6 +17,8 @@ import {CardWithPhoneComponent} from '../../shared/components/card-with-phone/ca
 import {TitleLgWithIconComponent} from '../../shared/components/title-lg-with-icon/title-lg-with-icon.component';
 import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-icon/title-xl-with-icon.component';
 import {EllipseComponent} from '../../shared/components/ellipse/ellipse.component';
+import {BgBlurComponent} from '../../shared/components/bg-blur/bg-blur.component';
+import {ScrollSpyDirective} from '../../shared/directives/scroll-spy.directive';
 
 
 @Component({
@@ -33,18 +35,29 @@ import {EllipseComponent} from '../../shared/components/ellipse/ellipse.componen
     TitleLgWithIconComponent,
     TitleXlWithIconComponent,
     EllipseComponent,
+    BgBlurComponent,
+    NgClass,
+    ScrollSpyDirective,
   ],
   templateUrl: './home.component.html',
   standalone: true,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  navbarButtons : string[] = [
-    'Accueil',
-    'Présentation',
-    'Partenaire',
-    'Guide'
+  navbarButtons = [
+    { label: 'Accueil', id: 'accueil' },
+    { label: 'Présentation', id: 'presentation' },
+    { label: 'Partenaire', id: 'partenaire' },
+    { label: 'Guide', id: 'guide' }
   ];
+
+  scrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.scrollY > 80; // active à partir de 50px de scroll
+  }
+
 
   profilePath : string = '/profile-screen.svg'
   announcePath : string = '/announces-screen.svg'
@@ -54,7 +67,9 @@ export class HomeComponent {
   protected readonly utensils_crossed = UtensilsCrossed
   protected readonly truck_electric = TruckElectric;
   protected readonly party_popper = PartyPopper
-
+  protected readonly play_store = Play
+  protected readonly mail = Mail;
+  protected readonly phone = Phone
 
   about = [
     {
@@ -73,6 +88,39 @@ export class HomeComponent {
       description : "Restez à l’affut des promotions dans vos restaurants depuis votre téléphone et observer rencontrer les facades cachées de ceux-ci. "
     }
   ]
+
+  contacts = [
+    {
+      icon : this.mail,
+      text : "contact@yansFood.com"
+    },
+    {
+      icon : this.phone,
+      text : "+237 658 532 272"
+    }
+  ]
+
+  links = [
+    "Acceuil",
+    "Présenatation",
+    "Partenaires",
+    "Guide"
+  ]
+
+  legal = [
+    "Conditions D'utilisation",
+    "Politique Confidentialité",
+    "Politique Des Cookies",
+  ]
+
+  produit = [
+    "YansFood",
+    "YansFood Restaurant",
+    "YansDeleiver",
+
+  ]
+
+
 
   menuDisplay = false
 
