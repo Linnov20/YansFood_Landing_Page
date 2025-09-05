@@ -46,8 +46,8 @@
   >
 
   <main
-    class="p-2 flex flex-col gap-10 border w-full
-           sm:pl-4 sm:block sm:pt-28 md:pt-32 sm:w-auto sm:relative sm:ml-0"
+    class="p-2 flex flex-col gap-10 border
+           sm:pl-4 sm:block sm:pt-28 md:pt-32 "
     id="accueil"
 
   >
@@ -110,13 +110,13 @@
       >
 
       <aside
-        class="w-1/2 flex justify-center"
+        class="w-[60%] flex justify-center border"
       >
         <div
-          class="absolute z-10 m-auto xl:-translate-y-[9rem]
+          class="sm:absolute z-10 m-auto xl:-translate-y-[9rem]
                  xl:translate-x-2 lg:-translate-x-8 md:-translate-x-4 md:-translate-[7rem]
                  sm:-translate-x-8 sm:-translate-y-[5rem]
-                 -translate-y-[2rem]
+                 -translate-y-[2rem] relative
                 "
         >
           <img
@@ -125,7 +125,8 @@
           >
         </div>
         <div
-          class="absolute z-0 lg:translate-y-60 rotate-45 md:translate-y-44 sm:translate-y-28 translate-y-12"
+          class="absolute z-0 lg:translate-y-60 rotate-45 md:translate-y-44 sm:translate-y-28 translate-y-12
+                 sm:translate-x-none -translate-x-14"
         >
           <app-bg-blur
             [redColorUp]=false
@@ -192,7 +193,8 @@
                 "
         >
           <div
-            class="absolute w-36 h-[26rem] bg-white z-10  xl:translate-x-[13.5rem] -translate-y-24 hidden 2xl:block"
+            class="absolute w-36 h-[26rem] bg-white z-10  xl:translate-x-[13.5rem] -translate-y-24 hidden 2xl:block
+                   sm:translate-none -translate-x-5"
           >
           </div>
           <app-bg-blur
@@ -614,7 +616,7 @@
           class="absolute rotate-45 translate-y-96 translate-x-0"
         >
         <div
-          class="absolute z-0 rotate-45 translate-x-20 translate-y-16 "
+          class="absolute z-0 rotate-45 sm:translate-x-20 translate-y-16 translate-x-8"
         >
           <app-bg-blur/>
         </div>
@@ -668,7 +670,7 @@
         >
           <div
             class="font-semibold translate-y-7
-                   sm:text-[28px] sm:ml-32 text-2xl ml-10
+                   sm:text-[28px] sm:ml-32 text-2xl
                    "
           >
             Étape 4
@@ -689,11 +691,11 @@
   </main>
 
   <footer
-    class="flex flex-col gap-4 sm:pl-0 pl-20"
+    class="flex flex-col gap-4 sm:pl-0 sm:pl-20 pl-2"
   >
     <div
       class="flex pr-2 pt-8 pl-6 pb-12 sm:gap-15
-             sm:flex-nowrap flex-wrap gap-8"
+             sm:flex-nowrap flex-wrap gap-5"
     >
       <section
 
@@ -788,7 +790,7 @@
         >
           <img
             ngSrc="/Star.svg" alt="star-image" height="38" width="42"
-            class="absolute w-14 -translate-y-32 -right-1/10 z-10"
+            class="absolute w-14 -translate-y-32 -right-1/10 z-10 sm:translate-x-none -translate-x-10"
           >
           <input
             class="focus:outline-none p-1 w-1/2"
