@@ -5,7 +5,7 @@
   <header
     [ngClass]="{ 'sm:mb-32 mb-12 bg-white/80 sm:bg-gradient-to-r sm:from-[#FF555550] sm:via-[#ffffff80] sm:to-[#FF555550] backdrop-blur-md shadow-sm': scrolled, 'bg-transparent ': !scrolled
     }"
-    class="sm:fixed w-full sm:max-w-[1280px] z-50 flex sm:items-center
+    class="fixed w-full sm:max-w-[1280px] z-50 flex sm:items-center
            lg:pl-12 lg:pr-12 sm:h-auto h-20"
   >
 
@@ -19,7 +19,7 @@
 
 
     <div
-      class="w-full border md:hidden"
+      class="w-full md:hidden"
     >
       <app-menu-burger
         [navbarButtons]="navbarButtons"
@@ -46,7 +46,7 @@
   >
 
   <main
-    class="p-2 flex flex-col gap-10 border
+    class="p-2 flex flex-col gap-10 pt-24 border
            sm:pl-4 sm:block sm:pt-28 md:pt-32 "
     id="accueil"
 
@@ -110,7 +110,7 @@
       >
 
       <aside
-        class="w-[60%] flex justify-center border"
+        class="w-[60%] flex justify-center"
       >
         <div
           class="sm:absolute z-10 m-auto xl:-translate-y-[9rem]
@@ -691,7 +691,7 @@
   </main>
 
   <footer
-    class="flex flex-col gap-4 sm:pl-0 sm:pl-20 pl-2"
+    class="flex flex-col gap-4 sm:pl-0 sm:pl-20 pl-2 border"
   >
     <div
       class="flex pr-2 pt-8 pl-6 pb-12 sm:gap-15

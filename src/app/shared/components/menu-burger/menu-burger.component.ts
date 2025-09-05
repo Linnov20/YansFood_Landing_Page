@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, HostListener, Input} from '@angular/core';
 import {LucideAngularModule, Menu, X} from 'lucide-angular';
 import {NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../primary-button/primary-button.component';
@@ -26,4 +26,12 @@ export class MenuBurgerComponent {
 
   protected readonly close = X;
   protected readonly menu = Menu;
+
+  // 👇 écoute du scroll
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (this.menuDisplay) {
+      this.menuDisplay = false;
+    }
+  }
 }
