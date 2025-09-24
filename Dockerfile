@@ -18,7 +18,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy the built Angular application from the builder stage to Nginx's html directory
-COPY --from=builder /app/dist/YansFood_Landing_Page /usr/share/nginx/html
+COPY --from=builder /app/dist/yans-food /usr/share/nginx/html
 
 EXPOSE 4200
 
