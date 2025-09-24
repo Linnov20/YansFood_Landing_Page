@@ -27,7 +27,7 @@ jobs:
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist-files
+          name: dist
           path: dist/
           include-hidden-files: false
 
