@@ -12,13 +12,16 @@ RUN npm install
 COPY . .
 
 # Build the Angular application for production
-RUN npm run build --prod
+RUN npm run build
 
 # Stage 2: Serve the application with Nginx
 FROM nginx:alpine
 
 # Copy the built Angular application from the builder stage to Nginx's html directory
 COPY --from=builder /app/dist/yans-food/browser /usr/share/nginx/html
+
+# Copy your custom Nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
