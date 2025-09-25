@@ -20,7 +20,7 @@ FROM nginx:alpine
 # Copy the built Angular application from the builder stage to Nginx's html directory
 COPY --from=builder /app/dist/yans-food /usr/share/nginx/html
 
-EXPOSE 4200
+EXPOSE 80
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
