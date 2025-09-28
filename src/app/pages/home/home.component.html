@@ -45,6 +45,8 @@
        class="rotate-45 sm:block hidden"
   >
 
+  <app-video-modal #trailerModal [videoUrl]="'/YansFood_Teaser.mp4'"></app-video-modal>
+
   <main
     class="p-2 flex flex-col gap-10 pt-24
            sm:pl-4 sm:block sm:pt-28 md:pt-32 "
@@ -95,7 +97,14 @@
                 [img]="playIcon"
               ></lucide-angular>
             </div>
-            <app-primary-button name="Bande D'annonce👀" />
+            <button
+              class="font-medium font-raleway
+              lg:text-base text-xs sm:text-sm
+              hover:font-bold hover:cursor-pointer hover:ease-linear hover:duration-100"
+              (click)="openTrailer()"
+            >
+              Bande D'annonce👀
+            </button>
           </div>
         </div>
 
@@ -560,7 +569,7 @@
             <span
               class="sm:text-lg text-sm"
             >
-              Accéder à YansFood sans téléchargement depuis la version web, <a class="text-[#F14237]" href="#">cliquez-ici</a>...
+              Accéder à YansFood sans téléchargement depuis la version web, <a class="text-[#F14237]" target="_blank" href="https://app.yansfood.com">cliquez-ici</a>...
             </span>
           </div>
         </div>
@@ -580,10 +589,11 @@
           </span>
           <button
             class="flex gap-1 items-center bg-white rounded-sm text-black mt-3
-                    sm:p-3 p-1.5 sm:text-base text-sm
+                    sm:p-3 p-1.5 sm:text-base text-sm hover:text-[#F14237] hover:cursor-pointer hover:font-medium
                   "
+            (click)="downloadApk()"
           >
-            Download App
+            Télécharger L'App
             <lucide-angular
               [name] = play_store
               strokeWidth="1.5"
@@ -726,7 +736,7 @@
         </h1>
         @for (item of links; track $index) {
           <a
-            class="font-medium"
+            class="font-medium hover:text-[#F14237]"
             href="#"
           >
             {{ item }}
@@ -744,10 +754,10 @@
         </h1>
         @for (item of legal; track $index) {
           <a
-            class="font-medium"
-            href="#"
+            class="font-medium hover:text-[#F14237]"
+            [href]=item.link
           >
-            {{ item }}
+            {{ item.label }}
           </a>
         }
       </section>
@@ -762,10 +772,11 @@
         </h1>
         @for (item of produit; track $index) {
           <a
-            class="font-medium"
-            href="#"
+            class="font-medium hover:text-[#F14237]"
+            [href]=item.link
+            target="_blank"
           >
-            {{ item }}
+            {{ item.label }}
           </a>
         }
       </section>
@@ -782,7 +793,7 @@
         <span
           class="font-medium z-10"
         >
-         Rester À Jour
+         Restez À Jour
        </span>
 
         <div
@@ -799,7 +810,7 @@
           <button
             class="p-4 w-1/2 bg-black text-white font-medium rounded-sm hover:cursor-pointer"
           >
-            Subscribe
+            Souscrire
           </button>
         </div>
         <div
@@ -822,7 +833,7 @@
         class="h-0.5 w-full bg-gradient-to-r from-[#16161600] via-[#696969] to-[#16161600]"
       ></div>
       <a
-        href="PRIVACY%20POLICY.pdf"
+        href="PRIVACY_POLICY.pdf"
         class="font-medium m-auto hover:text-[#FF5555] text-center"
       >
         Copyright 2025 App.YansFood.Com All Rights Reserved

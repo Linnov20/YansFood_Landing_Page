@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import {Component, HostListener, ViewChild} from '@angular/core';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 import {PrimaryButtonComponent} from '../../shared/components/primary-button/primary-button.component';
 import {SecondaryButtonComponent} from '../../shared/components/secondary-button/secondary-button.component';
@@ -19,6 +19,7 @@ import {TitleXlWithIconComponent} from '../../shared/components/title-xl-with-ic
 import {EllipseComponent} from '../../shared/components/ellipse/ellipse.component';
 import {BgBlurComponent} from '../../shared/components/bg-blur/bg-blur.component';
 import {ScrollSpyDirective} from '../../shared/directives/scroll-spy.directive';
+import {AppVideoModalComponent} from '../../shared/components/video-modal/app-video-modal.component';
 
 
 @Component({
@@ -38,6 +39,7 @@ import {ScrollSpyDirective} from '../../shared/directives/scroll-spy.directive';
     BgBlurComponent,
     NgClass,
     ScrollSpyDirective,
+    AppVideoModalComponent,
   ],
   templateUrl: './home.component.html',
   standalone: true,
@@ -53,12 +55,13 @@ export class HomeComponent {
 
   scrolled = false;
 
+  @ViewChild('trailerModal') trailerModal!: AppVideoModalComponent;
+
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.scrolled = window.scrollY > 80; // active à partir de 50px de scroll
   }
-
-
   profilePath : string = '/profile-screen.svg'
   announcePath : string = '/announces-screen.svg'
   foodDescPath : string = '/food_desc_screen.svg'
@@ -69,6 +72,7 @@ export class HomeComponent {
   protected readonly party_popper = PartyPopper
   protected readonly play_store = Play
   protected readonly mail = Mail;
+
   protected readonly phone = Phone
 
   about = [
@@ -100,32 +104,57 @@ export class HomeComponent {
     }
   ]
 
+
   links = [
-    "Acceuil",
-    "Présenatation",
+    "Accueil",
+    "Présentation",
     "Partenaires",
     "Guide"
   ]
 
   legal = [
-    "Conditions D'utilisation",
-    "Politique Confidentialité",
-    "Politique Des Cookies",
+    {
+      label : "Conditions D'utilisation",
+      link : "Terms_Conditions.pdf"
+    },
+    {
+      label : "Politique Confidentialité",
+      link : "PRIVACY_POLICY.pdf"
+    },
+    {
+      label : "Politique Cookies",
+      link : "conditions-d-utilisation"
+    }
   ]
+
+
 
   produit = [
-    "YansFood",
-    "YansFood Restaurant",
-    "YansDeleiver",
+    {
+      label: "YansFood",
+      link: "https://app.yansfood.com"
+    },
+    {
+      label: "YansResto",
+      link: "https://resto.yansfood.com"
+    },
+    {
+      label: "YansDelivery",
+      link: "https://delivery.yansfood.com"
+    },
 
   ]
 
-
-
   menuDisplay = false
-
   toggleMenu = () =>{
     this.menuDisplay = !this.menuDisplay
 
+  }
+  downloadApk() {
+    window.location.href = "/yansfood.apk";
+  }
+
+  openTrailer() {
+    this.trailerModal.show();
   }
 }
