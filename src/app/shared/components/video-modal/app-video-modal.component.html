@@ -1,0 +1,20 @@
+@if (open()) {
+  <div class="fixed inset-0 bg-[#F1423770] flex items-center justify-center z-50"
+       (click)="close()"
+  >
+    <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 relative">
+      <!-- bouton fermer -->
+      
+
+      <!-- player vidéo -->
+      <video
+        #videoPlayer
+        [src]="videoUrl"
+        controls
+        autoplay
+        class="w-full rounded-lg"
+      ></video>
+    </div>
+  </div>
+}
+

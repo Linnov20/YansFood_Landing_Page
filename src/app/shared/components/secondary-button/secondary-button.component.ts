@@ -9,4 +9,7 @@ import {Component, Input} from '@angular/core';
 })
 export class SecondaryButtonComponent {
   @Input() name = 'button name'
+  downloadApk() {
+    window.location.href = "/yansfood.apk";
+  }
 }
