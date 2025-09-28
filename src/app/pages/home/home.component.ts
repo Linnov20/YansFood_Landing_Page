@@ -79,17 +79,17 @@ export class HomeComponent {
     {
       icon : this.sparkle,
       title : "Ne Faites plus les files d’attente",
-      description : "YansFood est une application de commande et livraison de repas. commander dès à présent dans vos restaurant préféré et faites vous livrer le plus rapidement possible"
+      description : "YansFood est une application de commande et livraison de repas. Commandez dès à présent dans vos restaurants préférés et faites-vous livrer le plus rapidement possible"
     },
     {
       icon : this.utensils_crossed,
       title : "Vos Restaurants, Nos Partenaires",
-      description : "Plus besoin de vos déplacer pour savoir les repas sont encore disponible dans vos restaurants préféré, yansFood est là pour vous."
+      description : "Plus besoin de vous déplacer pour savoir si les repas sont encore disponibles dans vos restaurants préférés, YansFood est là pour vous."
     },
     {
       icon : this.truck_electric,
       title : "Plus Qu’une Simple App De Livraison Et Commande",
-      description : "Restez à l’affut des promotions dans vos restaurants depuis votre téléphone et observer rencontrer les facades cachées de ceux-ci. "
+      description : "Restez à l’affut des promotions dans vos restaurants depuis votre téléphone et observez rencontrer les façades cachées de ceux-ci. "
     }
   ]
 
