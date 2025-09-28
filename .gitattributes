@@ -1,0 +1,2 @@
+yans filter=lfs diff=lfs merge=lfs -text
+yansfood.apk filter=lfs diff=lfs merge=lfs -text
