@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {DownloadService} from '../../../services/download.service';
 
 @Component({
   selector: 'app-secondary-button',
@@ -9,7 +10,17 @@ import {Component, Input} from '@angular/core';
 })
 export class SecondaryButtonComponent {
   @Input() name = 'button name'
-  downloadApk() {
+
+  constructor(private downloadService: DownloadService) {
+  }
+
+
+  handleDownload() {
     window.location.href = "/yansfood.apk";
+    this.downloadService.logDownload().subscribe({
+      next: (res) => {
+        console.log("Téléchargement comptabilisé :", res);
+      }
+    });
   }
 }
