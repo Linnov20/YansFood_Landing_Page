@@ -20,6 +20,8 @@ import {EllipseComponent} from '../../shared/components/ellipse/ellipse.componen
 import {BgBlurComponent} from '../../shared/components/bg-blur/bg-blur.component';
 import {ScrollSpyDirective} from '../../shared/directives/scroll-spy.directive';
 import {AppVideoModalComponent} from '../../shared/components/video-modal/app-video-modal.component';
+import {FormsModule} from '@angular/forms';
+import {NewsletterService} from '../../services/newletter.service';
 
 
 @Component({
@@ -40,6 +42,7 @@ import {AppVideoModalComponent} from '../../shared/components/video-modal/app-vi
     NgClass,
     ScrollSpyDirective,
     AppVideoModalComponent,
+    FormsModule
   ],
   templateUrl: './home.component.html',
   standalone: true,
@@ -62,6 +65,8 @@ export class HomeComponent {
   onWindowScroll() {
     this.scrolled = window.scrollY > 80; // active à partir de 50px de scroll
   }
+
+  email: string = "";
   profilePath : string = '/profile-screen.svg'
   announcePath : string = '/announces-screen.svg'
   foodDescPath : string = '/food_desc_screen.svg'
@@ -74,6 +79,12 @@ export class HomeComponent {
   protected readonly mail = Mail;
 
   protected readonly phone = Phone
+
+  constructor(
+
+    private newsletterService: NewsletterService
+  ) {
+  }
 
   about = [
     {
@@ -156,5 +167,27 @@ export class HomeComponent {
 
   openTrailer() {
     this.trailerModal.show();
+  }
+
+
+  successMessage: string = '';
+  subscribe() {
+    this.newsletterService.subscribe(this.email).subscribe({
+      next: (res) => {
+        console.log("Inscription réussie :", res)
+        this.successMessage = "✅ Merci ! Votre email a été enregistré.";
+        // vider le champ
+        this.email = '';
+
+        // cacher automatiquement après 3s
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
+      },
+      error:()=> {
+        this.successMessage = "❌ Une erreur est survenue, réessayez.";
+        setTimeout(() => (this.successMessage = ''), 3000);
+      }
+    });
   }
 }
