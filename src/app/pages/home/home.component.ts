@@ -162,7 +162,7 @@ export class HomeComponent {
 
   }
   downloadApk() {
-    window.location.href = "/yansfood.apk";
+    window.location.href = "/yansfood_app.apk";
   }
 
   openTrailer() {
