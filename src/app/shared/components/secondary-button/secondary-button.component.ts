@@ -16,7 +16,7 @@ export class SecondaryButtonComponent {
 
 
   handleDownload() {
-    window.location.href = "https://drive.google.com/file/d/1r1rSHNhHNFcjecs-bVMG8f0Op7lETWBz/view?usp=sharing";
+    window.location.href = "/yansfood-release.apk";
     this.downloadService.logDownload().subscribe({
       next: (res) => {
         console.log("Téléchargement comptabilisé :", res);
